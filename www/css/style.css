@@ -247,7 +247,7 @@ margin-left: 700px;
 	height: 100%;
 	z-index: 10000;
 	color: white;
-     padding-top: 1cm;
+     padding-top: 3cm;
      overflow-y:auto;
     /* -webkit-overflow-scrolling:touch;*/
 	::-webkit-scrollbar {
