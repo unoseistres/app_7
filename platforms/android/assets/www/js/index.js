@@ -331,12 +331,16 @@ $(document).one('pagebeforecreate', function () {
   $("#mypanel").panel().listview();
   $("#mypanel").listview();
   //prompts for the drawing section 
-  $('#mypanel').append('<div id="zoomwrapper1"><div id="zoom1"><img src="img/house.png" height="100" weight="100"></img></div></div>');
+  $('#mypanel').append('<div id="zoomwrapper1" class="clone"><div id="zoom1"><img src="img/house.png" height="100" weight="100"></img></div></div>');
   $('#mypanel').append('<img src="img/cloud.png" height="100" weight="100"></img>');
   $('#mypanel').append('<img src="img/tree.png" height="100" weight="100"></img>');
   $('#mypanel').append('<img src="img/flower.png" height="100" weight="100"></img>');
   $('#mypanel').append('<img src="img/sun.png" height="100" weight="100"></img>');
   $('#section2').append($("#mypanel"))
+
+  $("zoomwrapper1").on("tap",function(){
+    $(this).clone().appendTo("can");
+});
 
 var hammertime = Hammer(document.getElementById('zoomwrapper1'), {
         transform_always_block: true,

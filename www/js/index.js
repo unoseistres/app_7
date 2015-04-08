@@ -331,12 +331,24 @@ $(document).one('pagebeforecreate', function () {
   $("#mypanel").panel().listview();
   $("#mypanel").listview();
   //prompts for the drawing section 
-  $('#mypanel').append('<div id="zoomwrapper1"><div id="zoom1"><img src="img/house.png" height="100" weight="100"></img></div></div>');
+  $('#mypanel').append('<div id="zoomwrapper1" class="clone"><div id="zoom1"><img id="house" src="img/house.png" height="100" weight="100"></img></div></div>');
   $('#mypanel').append('<img src="img/cloud.png" height="100" weight="100"></img>');
   $('#mypanel').append('<img src="img/tree.png" height="100" weight="100"></img>');
   $('#mypanel').append('<img src="img/flower.png" height="100" weight="100"></img>');
   $('#mypanel').append('<img src="img/sun.png" height="100" weight="100"></img>');
   $('#section2').append($("#mypanel"))
+
+  var x="100";
+  var y="100";
+
+  $(".clone").on("tap",function(){
+    //create clone
+    var c=document.getElementById("can");
+    var ctx=c.getContext("2d");
+    var img=document.getElementById('house');
+    ctx.drawImage(img,x,y,320,350);
+    $(this).addClass("clone")
+});
 
 var hammertime = Hammer(document.getElementById('zoomwrapper1'), {
         transform_always_block: true,

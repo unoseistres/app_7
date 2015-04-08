@@ -248,7 +248,7 @@ margin-left: 700px;
 	z-index: 10000;
 	color: white;
      padding-top: 3cm;
-     overflow-y:auto;
+     overflow-y:visible;
     /* -webkit-overflow-scrolling:touch;*/
 	::-webkit-scrollbar {
     -webkit-appearance: none;
