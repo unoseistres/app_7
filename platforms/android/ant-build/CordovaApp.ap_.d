@@ -60,6 +60,7 @@
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/images/ui-icons_222222_256x240.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/clear.png \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/img/cloud.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/connect.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/crayon.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/css-images-ui-icons_222222_256x240.png \
@@ -67,12 +68,14 @@
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/download.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/drawers.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/eraser.png \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/img/flower.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/happyface1.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/happyface2.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/happyface3.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/happyface4.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/happyface5.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/home.png \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/img/house.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/juliana_1.gif \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/logo.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/marker.png \
@@ -80,6 +83,8 @@
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/pedro_sketch.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/pias_text.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/save.png \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/img/sun.png \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/img/tree.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/welcomewritten2.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/wire_frames-01.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/wire_frames-02.png \
