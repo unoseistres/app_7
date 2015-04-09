@@ -496,9 +496,15 @@ padding:10px;*/
 	/*width:100px;
 	height:100px;*/
 }
-.clone{
-	position: absolute;
-	z-index: 500;
+#drop{
+	display:none;
+	width:650px;
+	height:400px;
+	position:absolute;
+	top: 93px;
+	left:49px;
+	/*z-index: -1;*/
+	border: red dotted;
 }
 
 
