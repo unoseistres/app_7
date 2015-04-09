@@ -372,7 +372,7 @@ var hammertime = Hammer(document.getElementById('b1c1'), {
          rotation= 0, last_rotation, dragReady=0;
  
      hammertime.on('touch drag dragend transform', function(ev) {
-         elemRect = document.getElementById('zoom1');
+         elemRect = document.getElementById('b1c1');
      manageMultitouch(ev);
      // ev.preventDefault();
 });

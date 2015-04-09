@@ -342,10 +342,12 @@ $(document).one('pagebeforecreate', function () {
   var y="100";
   
 
-  $("#zoomwrapper1").on("tap",function(){
+$("#zoomwrapper1").on("tap",function(){
+  $( "#drop" ).show();
 
- $("#zoomwrapper1").clone().attr("id",'b1c'+1).appendTo("#mypanel");
+ $("#zoomwrapper1").clone().attr("id",'b1c'+1).appendTo("#drop");
  $("#zoom1").removeAttr('id');
+ $("#zoomwrapper1").removeClass("clone");
  
       $("#b1c1" ).css('position', 'inherit');
       $("#b1c1" ).css('top','70px');
@@ -355,7 +357,7 @@ $(document).one('pagebeforecreate', function () {
 
 
 
-var hammertime = Hammer(document.getElementById('zoom1'), {
+var hammertime = Hammer(document.getElementById('b1c1'), {
         transform_always_block: true,
          transform_min_scale: 1,
          drag_block_horizontal: true,
@@ -370,7 +372,7 @@ var hammertime = Hammer(document.getElementById('zoom1'), {
          rotation= 0, last_rotation, dragReady=0;
  
      hammertime.on('touch drag dragend transform', function(ev) {
-         elemRect = document.getElementById('b1c1');
+         elemRect = document.getElementById('zoom1');
      manageMultitouch(ev);
      // ev.preventDefault();
 });
@@ -413,12 +415,19 @@ case 'touch':
          ev.preventDefault();
    }
 
+var width= 100;
+var height= 100;
+var x= lastPosX;
+var y = lastPosY;
+
 $("#b1c1").on("tap",function(){
   var c=document.getElementById("can");
     var ctx=c.getContext("2d");
     var img=document.getElementById('house');
-    ctx.drawImage(img,x,y,320,350);
+    ctx.drawImage(img,x,y,width,height);
     $( "#b1c1" ).remove();
+    $("#drop").css("visibility", "hidden");
+
 
 });
 
