@@ -496,5 +496,9 @@ padding:10px;*/
 	/*width:100px;
 	height:100px;*/
 }
+.clone{
+	position: absolute;
+	z-index: 500;
+}
 
 

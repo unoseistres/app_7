@@ -76,6 +76,7 @@
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/happyface5.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/home.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/house.png \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/img/house.svg \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/juliana_1.gif \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/logo.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/marker.png \
