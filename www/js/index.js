@@ -421,12 +421,18 @@ var x= lastPosX;
 var y = lastPosY;
 
 $("#b1c1").on("tap",function(){
-  var c=document.getElementById("can");
+  // alert("check");
+  if (confirm('draw?')) {
+      // do delete item
+       
+    var c=document.getElementById("can");
     var ctx=c.getContext("2d");
     var img=document.getElementById('house');
     ctx.drawImage(img,x,y,width,height);
     $( "#b1c1" ).remove();
     $("#drop").css("visibility", "hidden");
+   } 
+  
 
 
 });

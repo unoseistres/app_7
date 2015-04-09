@@ -503,7 +503,7 @@ padding:10px;*/
 	position:absolute;
 	top: 93px;
 	left:49px;
-	/*z-index: -1;*/
+	z-index: 1;
 	border: red dotted;
 }
 

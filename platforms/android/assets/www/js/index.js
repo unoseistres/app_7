@@ -372,7 +372,7 @@ var hammertime = Hammer(document.getElementById('b1c1'), {
          rotation= 0, last_rotation, dragReady=0;
  
      hammertime.on('touch drag dragend transform', function(ev) {
-         elemRect = document.getElementById('zoom1');
+         elemRect = document.getElementById('b1c1');
      manageMultitouch(ev);
      // ev.preventDefault();
 });
@@ -421,12 +421,18 @@ var x= lastPosX;
 var y = lastPosY;
 
 $("#b1c1").on("tap",function(){
-  var c=document.getElementById("can");
+  // alert("check");
+  if (confirm('draw?')) {
+      // do delete item
+       
+    var c=document.getElementById("can");
     var ctx=c.getContext("2d");
     var img=document.getElementById('house');
     ctx.drawImage(img,x,y,width,height);
     $( "#b1c1" ).remove();
     $("#drop").css("visibility", "hidden");
+   } 
+  
 
 
 });
