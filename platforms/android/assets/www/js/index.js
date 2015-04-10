@@ -421,26 +421,51 @@ case 'touch':
          elemRect.style.mozTransform = transform;
          elemRect.style.webkitTransform = transform;
          ev.preventDefault();
+         // ev.stopPropagation();
+         // 
+         // ("section2").removeEventListener('swipe', handler ,false);
    }
 
 var width= 100;
 var height= 100;
 var x= lastPosX;
 var y = lastPosY;
+var TO_RADIANS = Math.PI/180; 
+// var angle;
+
 
 $("#b1c1").on("tap",function(){
   
   if (confirm('draw?')) {
+
       // do delete item
     var p = $( "#b1c1" );
     var position = p.position();  
     var c=document.getElementById("can");
     var ctx=c.getContext("2d");
     var img=document.getElementById('house');
-    //ctx.rotate(rotation);
+    
+    // ctx.rotate(rotation*Math.PI/180);
+    
+    // var r= (rotation*Math.PI/180);
+    // var rotate= (position.r + position.left);
+    // $("#b1c1").rotate(rotation*Math.PI/180);
+    // var r= (img +rotation); 
+    
+    ctx.save();
+    ctx.translate(canvas.width/2,canvas.height/2);
+    ctx.rotate(rotation*Math.PI/180);
     ctx.drawImage(img,position.left,position.top,width*scale,height*scale);
-    $( "#b1c1" ).remove();
+    ctx.restore();
+
+    // ctx.rotation();
+    
+
+    
+    $("#b1c1").remove();
     $("#drop").css("visibility", "hidden");
+    
+    
    } 
   
 

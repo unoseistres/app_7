@@ -351,7 +351,7 @@ $("#zoomwrapper1").on("tap",function(){
  
       $("#b1c1" ).css('position', 'inherit');
       $("#b1c1" ).css('top','70px');
-      $("#b1c1" ).css('right', '200px');
+      $("#b1c1" ).css('right', '400px');
       $("#b1c1" ).css('z-index', '99999');
       console.log("cloned");
 
@@ -362,7 +362,8 @@ var hammertime = Hammer(document.getElementById('b1c1'), {
          transform_min_scale: 1,
          drag_block_horizontal: true,
          drag_block_vertical: true,
-        drag_min_distance: 0
+        drag_min_distance: 0,
+        domEvents: true
     });
  
     var posX=0, posY=0,
@@ -375,7 +376,11 @@ var hammertime = Hammer(document.getElementById('b1c1'), {
          elemRect = document.getElementById('b1c1');
      manageMultitouch(ev);
      ev.preventDefault();
-});
+       
+}, true);
+
+var rotation = null;
+var scale = null;
 
 function manageMultitouch(ev){
  
@@ -402,6 +407,9 @@ case 'touch':
          break;
          }
  
+        console.log("Scale: " + scale);
+        console.log("Rotation: " + rotation);
+
          var transform =
                  "translate3d("+posX+"px,"+posY+"px, 0) " +
                  "scale3d("+scale+","+scale+", 1) " +
@@ -413,25 +421,51 @@ case 'touch':
          elemRect.style.mozTransform = transform;
          elemRect.style.webkitTransform = transform;
          ev.preventDefault();
+         // ev.stopPropagation();
+         // 
+         // ("section2").removeEventListener('swipe', handler ,false);
    }
 
 var width= 100;
 var height= 100;
 var x= lastPosX;
 var y = lastPosY;
+var TO_RADIANS = Math.PI/180; 
+// var angle;
+
 
 $("#b1c1").on("tap",function(){
-  // alert("check");
+  
   if (confirm('draw?')) {
+
       // do delete item
     var p = $( "#b1c1" );
-var position = p.position();  
+    var position = p.position();  
     var c=document.getElementById("can");
     var ctx=c.getContext("2d");
     var img=document.getElementById('house');
-    ctx.drawImage(img,position.left,position.top,width,height);
-    $( "#b1c1" ).remove();
+    
+    // ctx.rotate(rotation*Math.PI/180);
+    
+    // var r= (rotation*Math.PI/180);
+    // var rotate= (position.r + position.left);
+    // $("#b1c1").rotate(rotation*Math.PI/180);
+    // var r= (img +rotation); 
+    
+    ctx.save();
+    ctx.translate(canvas.width/2,canvas.height/2);
+    ctx.rotate(rotation*Math.PI/180);
+    ctx.drawImage(img,position.left,position.top,width*scale,height*scale);
+    ctx.restore();
+
+    // ctx.rotation();
+    
+
+    
+    $("#b1c1").remove();
     $("#drop").css("visibility", "hidden");
+    
+    
    } 
   
 
