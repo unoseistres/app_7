@@ -444,23 +444,17 @@ $("#b1c1").on("tap",function(){
     var c=document.getElementById("can");
     var ctx=c.getContext("2d");
     var img=document.getElementById('house');
-    
-    // ctx.rotate(rotation*Math.PI/180);
-    
-    // var r= (rotation*Math.PI/180);
-    // var rotate= (position.r + position.left);
-    // $("#b1c1").rotate(rotation*Math.PI/180);
-    // var r= (img +rotation); 
-    
+
     ctx.save();
-    ctx.translate(canvas.width/2,canvas.height/2);
+    // ctx.translate(canvas.width/2,canvas.height/2);
     ctx.rotate(rotation*Math.PI/180);
+
+    // ctx.drawImage(img,position.left,position.top,width*scale,height*scale);
     ctx.drawImage(img,position.left,position.top,width*scale,height*scale);
+    // ctx.drawImage(img,position.left,position.top,-image.width/2*scale,-image.width/2*scale);
     ctx.restore();
 
     // ctx.rotation();
-    
-
     
     $("#b1c1").remove();
     $("#drop").css("visibility", "hidden");
