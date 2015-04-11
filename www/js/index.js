@@ -258,7 +258,7 @@ $(document).on("pagecreate","#section1",function(){
 });
 
 
-$(document).on("pagecreate","#section2",function(){
+$(document).on("pagecreate","#section2",function(event){
   $("#section2").on("swiperight",function(){
     $.mobile.changePage("#section1",{transition:"slide", reverse:true
       
@@ -271,7 +271,7 @@ $(document).on("pagecreate","#section2",function(){
 });
 
 
-$(document).on("pagecreate","#section2",function(){
+$(document).on("pagecreate","#section2",function(event){
   $("#section2").on("swipeleft",function(){
     $.mobile.changePage("#section3",{transition:"slide", 
       
@@ -369,13 +369,16 @@ var hammertime = Hammer(document.getElementById('b1c1'), {
     var posX=0, posY=0,
     lastPosX=0, lastPosY=0,
      bufferX=0, bufferY=0,
-         scale=1, last_scale,
-         rotation= 0, last_rotation, dragReady=0;
+         scale=1, last_scale;
+         // rotation= 0, last_rotation, dragReady=0;
  
      hammertime.on('touch drag dragend transform', function(ev) {
          elemRect = document.getElementById('b1c1');
      manageMultitouch(ev);
-     ev.preventDefault();
+     
+          event.stopPropagation();
+          event.preventDefault();
+
        
 }, true);
 
@@ -387,7 +390,7 @@ function manageMultitouch(ev){
      switch(ev.type) {
 case 'touch':
                  last_scale = scale;
-                 last_rotation = rotation;
+                 // last_rotation = rotation;
  
                  break;
  
@@ -397,7 +400,7 @@ case 'touch':
                  break;
  
              case 'transform':
-                 rotation = last_rotation + ev.gesture.rotation;
+                 // rotation = last_rotation + ev.gesture.rotation;
                  scale = Math.max(1, Math.min(last_scale * ev.gesture.scale, 10));
                  break;
  
@@ -412,18 +415,20 @@ case 'touch':
 
          var transform =
                  "translate3d("+posX+"px,"+posY+"px, 0) " +
-                 "scale3d("+scale+","+scale+", 1) " +
-                 "rotate("+rotation+"deg) ";
+                 "scale3d("+scale+","+scale+", 1) ";
+                 // "rotate("+rotation+"deg) ";
  
          elemRect.style.transform = transform;
          elemRect.style.oTransform = transform;
          elemRect.style.msTransform = transform;
          elemRect.style.mozTransform = transform;
          elemRect.style.webkitTransform = transform;
-         ev.preventDefault();
+         //
          // ev.stopPropagation();
-         // 
-         // ("section2").removeEventListener('swipe', handler ,false);
+         // ev.gesture.stopDetect() 
+         // ev.gesture.stopPropagation()
+         // ev.gesture.preventDefault();
+
    }
 
 var width= 100;
@@ -440,18 +445,31 @@ $("#b1c1").on("tap",function(){
 
       // do delete item
     var p = $( "#b1c1" );
-    var position = p.position();  
+    var position = p.position(); 
+    // var r = p.rotate(); 
     var c=document.getElementById("can");
-    var ctx=c.getContext("2d");
+    var ctx=canvas.getContext("2d");
     var img=document.getElementById('house');
 
+    
+    // ctx.rotate(rotation * Math.PI / 180);
+    // ctx.rotate(rotation);
+    
     ctx.save();
-    // ctx.translate(canvas.width/2,canvas.height/2);
-    ctx.rotate(rotation*Math.PI/180);
+    // ctx.translate(335,205);
+    // ctx.translate(position.left/2,position.top/2);
+    // ctx.rotate(rotation * TO_RADIANS);
+    console.log(rotation * TO_RADIANS);
 
-    // ctx.drawImage(img,position.left,position.top,width*scale,height*scale);
     ctx.drawImage(img,position.left,position.top,width*scale,height*scale);
-    // ctx.drawImage(img,position.left,position.top,-image.width/2*scale,-image.width/2*scale);
+    // ctx.drawImage(img,position.left,position.top,-(width*scale)/2,-(height*scale)/2);
+    // ctx.drawImage(img,-(img.width)/2),-(img.height)/2));
+    
+    console.log("left:" + position.left);
+    console.log("top:"+ position.top);
+    console.log("W-scale:"+ width*scale);
+    console.log("H-scale:" + height*scale);
+    console.log("draw");
     ctx.restore();
 
     $("#b1c1").remove();

@@ -61,6 +61,7 @@
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/images/ui-icons_222222_256x240.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/clear.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/cloud.png \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/img/comote.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/connect.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/crayon.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/css-images-ui-icons_222222_256x240.png \

@@ -188,8 +188,8 @@ div#rectangle{
 */
 
 #homepng{
-	width:40px;
-	height: 42px;
+	width:60;
+	height: 62px;
 	z-index: 100000;
 	/*
 margin-left: 700px;
@@ -216,18 +216,18 @@ margin-left: 700px;
 }
 
 #drawerspng{
-	width:40px;
-	height: 42px;
+	width:60px;
+	height: 62px;
 	z-index: 1000;
-	margin-left: 10px;
+	margin-left: 13px;
 	
 
 }
 
 #menu2{
 	position:fixed;
-	top:20px;
-	left: 830px;
+	top:3px;
+	left: 777px;
 	height: 10px;
 	z-index: 70;
 	width: 100%;
@@ -442,7 +442,7 @@ li span {
 }
 #pais{
 	position:relative;
-	top:40px;
+	top:46px;
 	left:100px;
 }
 
@@ -498,11 +498,12 @@ padding:10px;*/
 }
 #drop{
 	display:none;
-	width:650px;
-	height:400px;
+	width:670px;
+	height:410px;
+	top:15%;left:5%;
 	position:absolute;
-	top: 93px;
-	left:49px;
+	/*top: 93px;
+	left:49px;*/
 	z-index: 1;
 	border: red dotted;
 }
