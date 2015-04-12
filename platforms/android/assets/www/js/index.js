@@ -258,7 +258,7 @@ $(document).on("pagecreate","#section1",function(){
 });
 
 
-$(document).on("pagecreate","#section2",function(event){
+$(document).on("pagecreate","#section2",function(){
   $("#section2").on("swiperight",function(){
     $.mobile.changePage("#section1",{transition:"slide", reverse:true
       
@@ -266,12 +266,14 @@ $(document).on("pagecreate","#section2",function(event){
     
 
   }); 
-  
-  console.log("section2 right"); 
+  // if ($("#drop").show()){
+  //       section2.removeEventListener("swiperight swipeleft", false);
+  //    }
+  // console.log("section2 right"); 
 });
 
 
-$(document).on("pagecreate","#section2",function(event){
+$(document).on("pagecreate","#section2",function(){
   $("#section2").on("swipeleft",function(){
     $.mobile.changePage("#section3",{transition:"slide", 
       
@@ -286,6 +288,8 @@ $(document).on("pagecreate","#section3",function(){
     $.mobile.changePage("#section2",{transition:"slide", reverse:true
       
     });
+
+    
   });  
 });
 
@@ -343,19 +347,30 @@ $(document).one('pagebeforecreate', function () {
   
 
 $("#zoomwrapper1").on("tap",function(){
-  $( "#drop" ).show();
+ var counter=0;
+ $("#drop").show();
 
- $("#zoomwrapper1").clone().attr("id",'b1c'+1).appendTo("#drop");
- $("#zoom1").removeAttr('id');
- $("#zoomwrapper1").removeClass("clone");
+ var element=$("#zoomwrapper1").clone();
+ $(element).removeAttr('id', '#zoomwrapper1');
+ $(element).removeAttr('id', '#zoom1');
+
+ element.addClass("tempclass");
+ counter++;
+ $(element).attr("id", "b1c" + counter);
  
-      $("#b1c1" ).css('position', 'inherit');
-      $("#b1c1" ).css('top','70px');
-      $("#b1c1" ).css('right', '400px');
-      $("#b1c1" ).css('z-index', '99999');
+ $(element).removeClass("clone");
+ $(element).removeClass("tempclass");
+ 
+ 
+      $(element).css('position', 'absolute');
+      $(element).css('top','300px');
+      $(element).css('right', '400px');
+      $(element).css('z-index', '99999');
+      $(element).css('width', '100');
+      $(element).css('height', '100');
       console.log("cloned");
 
-
+  $(element).appendTo("#drop");
 
 var hammertime = Hammer(document.getElementById('b1c1'), {
         transform_always_block: true,
@@ -373,13 +388,11 @@ var hammertime = Hammer(document.getElementById('b1c1'), {
          // rotation= 0, last_rotation, dragReady=0;
  
      hammertime.on('touch drag dragend transform', function(ev) {
-         elemRect = document.getElementById('b1c1');
+     elemRect = document.getElementById('b1c' + counter);
      manageMultitouch(ev);
-     
-          event.stopPropagation();
-          event.preventDefault();
 
-       
+     zoomwrapper1.removeEventListener("swipeleft swiperight", false);
+    
 }, true);
 
 var rotation = null;
@@ -423,11 +436,7 @@ case 'touch':
          elemRect.style.msTransform = transform;
          elemRect.style.mozTransform = transform;
          elemRect.style.webkitTransform = transform;
-         //
-         // ev.stopPropagation();
-         // ev.gesture.stopDetect() 
-         // ev.gesture.stopPropagation()
-         // ev.gesture.preventDefault();
+       
 
    }
 
@@ -439,12 +448,12 @@ var TO_RADIANS = Math.PI/180;
 // var angle;
 
 
-$("#b1c1").on("tap",function(){
+$("#b1c" + counter).on("tap",function(){
   
   if (confirm('draw?')) {
 
       // do delete item
-    var p = $( "#b1c1" );
+    var p = $( "#b1c" + counter );
     var position = p.position(); 
     // var r = p.rotate(); 
     var c=document.getElementById("can");
@@ -472,8 +481,9 @@ $("#b1c1").on("tap",function(){
     console.log("draw");
     ctx.restore();
 
-    $("#b1c1").remove();
-    $("#drop").css("visibility", "hidden");
+    $("#b1c" + counter).remove();
+    // $("#drop").css("visibility", "hidden");
+    $("#drop").hide();
     
     
    } 
