@@ -262,13 +262,13 @@ $(document).on("pagecreate","#section2",function swipe(){
   var handler= $("#section2").on("swiperight",function(){
     console.log("section2 right");
 
-// var handler = function(event) {
+
     if(document.getElementById('drop').style.display==="block") {
 
         swipe.stopPropagation();
         console.log("remove");
     }
-  // };
+
 
 
 
@@ -286,15 +286,11 @@ $(document).on("pagecreate","#section2",function swipe2(){
   var handler= $("#section2").on("swipeleft",function(){
     console.log("section2 right");
 
-// var handler = function(event) {
-    if(document.getElementById('drop').style.display==="block") {
 
+    if(document.getElementById('drop').style.display==="block") {
         swipe2.stopPropagation();
         console.log("remove");
     }
-  // };
-
-
 
     $.mobile.changePage("#section3",{transition:"slide",
       

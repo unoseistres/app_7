@@ -262,13 +262,13 @@ $(document).on("pagecreate","#section2",function swipe(){
   var handler= $("#section2").on("swiperight",function(){
     console.log("section2 right");
 
-// var handler = function(event) {
+
     if(document.getElementById('drop').style.display==="block") {
 
         swipe.stopPropagation();
         console.log("remove");
     }
-  // };
+
 
 
 
@@ -286,15 +286,11 @@ $(document).on("pagecreate","#section2",function swipe2(){
   var handler= $("#section2").on("swipeleft",function(){
     console.log("section2 right");
 
-// var handler = function(event) {
-    if(document.getElementById('drop').style.display==="block") {
 
+    if(document.getElementById('drop').style.display==="block") {
         swipe2.stopPropagation();
         console.log("remove");
     }
-  // };
-
-
 
     $.mobile.changePage("#section3",{transition:"slide",
       
@@ -380,10 +376,10 @@ $(document).one('pagebeforecreate', function () {
 
   var x="100";
   var y="100";
-  
+  var counter=0;
 
 $("#zoomwrapper1").on("tap",function(){
- var counter=0;
+ 
  $("#drop").show();
 
  var element=$("#zoomwrapper1").clone();
