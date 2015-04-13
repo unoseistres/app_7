@@ -264,8 +264,8 @@ $(document).on("pagecreate","#section2",function swipe(){
 
 
     if(document.getElementById('drop').style.display==="block") {
-
-        swipe.stopPropagation();
+        swipe.preventDefault();
+        // swipe.stopPropagation();
         console.log("remove");
     }
 
@@ -289,6 +289,7 @@ $(document).on("pagecreate","#section2",function swipe2(){
 
     if(document.getElementById('drop').style.display==="block") {
         swipe2.stopPropagation();
+        // swipe2.preventDefault();
         console.log("remove");
     }
 
@@ -376,10 +377,10 @@ $(document).one('pagebeforecreate', function () {
 
   var x="100";
   var y="100";
-  
+  var counter=0;
 
 $("#zoomwrapper1").on("tap",function(){
- var counter=0;
+ 
  $("#drop").show();
 
  var element=$("#zoomwrapper1").clone();
@@ -404,7 +405,7 @@ $("#zoomwrapper1").on("tap",function(){
 
   $(element).appendTo("#drop");
 
-var hammertime = Hammer(document.getElementById('b1c1'), {
+var hammertime = Hammer(document.getElementById('b1c' + counter), {
         transform_always_block: true,
          transform_min_scale: 1,
          drag_block_horizontal: true,
@@ -514,7 +515,6 @@ $("#b1c" + counter).on("tap",function(){
     ctx.restore();
 
     $("#b1c" + counter).remove();
-    // $("#drop").css("visibility", "hidden");
     $("#drop").hide();
     
     
