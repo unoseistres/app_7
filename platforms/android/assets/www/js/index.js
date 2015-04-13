@@ -258,14 +258,14 @@ $(document).on("pagecreate","#section1",function(){
 });
 
 
-var foo=$(document).on("pagecreate","#section2",function(){
-  $("#section2").on("swiperight",function(){
+$(document).on("pagecreate","#section2",function swipe(){
+  var handler= $("#section2").on("swiperight",function(){
     console.log("section2 right");
 
 // var handler = function(event) {
     if(document.getElementById('drop').style.display==="block") {
 
-        section2.removeEventListener('swiperight', foo, false);
+        swipe.stopPropagation();
         console.log("remove");
     }
   // };
