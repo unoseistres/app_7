@@ -242,6 +242,8 @@ margin-left: 700px;
 #mypanel{
 	
 	width:200px;
+	margin: 0 auto;
+	/*margin-left: 10px;*/
 	/*margin-right: 5px;*/
 	padding right: 150px;
 	height: 100%;
@@ -254,6 +256,7 @@ margin-left: 700px;
     -webkit-appearance: none;
     ::-webkit-scrollbar:vertical {
     width: 12px;
+
 }
 
 ::-webkit-scrollbar:horizontal {
@@ -347,18 +350,6 @@ margin-left: 700px;
 	  /*position: relative;*/
 	  
 	}
-	
-	
-.dragImg{
-	/*position: relative;
-    display: table;
-    text-align: center;*/
-    /*height: 100%; 
-    width: 100%;*/
-}
-		
-
-	  
 
 
 #dropHere {
@@ -397,14 +388,6 @@ li span {
 	
 	#slider { margin: 10px; }
 	
-	/*.dragImg{
-		display: block;
-		/*position:absolute;*/
-		
-		/*left:50%;
-		top: 50%;
-		
-		}*/
 		
 		.item-0{
 			
@@ -412,23 +395,13 @@ li span {
 			left: 50%;
 			
 			}
-/*			
-.ui-resizable-se {
-    width: 25px;
-    height: 25px;
-}*/
+/
 
 #save2{
 	top:480px;
 	left:840px;
 	
 }
-
-#wrapper{
-	/*text-align: center;
-  font: 30px/300px Helvetica, Arial, sans-serif;*/
-}
-
 
 
 #scale-element.reset {
@@ -456,11 +429,7 @@ left:0px;
 
 ul#smiley li {
 	display: inline;
-/*	width: auto;*/
-/*position:relative;
-display: inline-block;
-float:left;
-padding:10px;*/
+
 }
 
 #happy1{
@@ -493,8 +462,9 @@ padding:10px;*/
 	left:646px;
 }
 #zoomwrapper1{
-	/*width:100px;
-	height:100px;*/
+	width:100px;
+	height:100px;
+	text-align: center;
 }
 #drop{
 	display:none;
@@ -512,6 +482,14 @@ padding:10px;*/
 #b1c + counter{
 	width:100px;
 	height: 100px;
+}
+#zoom1{
+	width:100px;
+	height:100px;
+	margin: 0 auto;
+}
+#house{
+	/*margin-left: 10px;*/
 }
 
 
