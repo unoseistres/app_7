@@ -241,36 +241,21 @@ margin-left: 700px;
 
 #mypanel{
 	
+	background: white repeat scroll;
 	width:200px;
-	/*margin-right: 5px;*/
-	padding right: 150px;
+	margin: 0 auto;
+	/*margin-right: 3px;*/
+	padding right: 150px red;
 	height: 100%;
 	z-index: 10000;
 	color: white;
-     padding-top: 3cm;
-     overflow-y:visible;
-    /* -webkit-overflow-scrolling:touch;*/
-	::-webkit-scrollbar {
-    -webkit-appearance: none;
-    ::-webkit-scrollbar:vertical {
-    width: 12px;
-}
+     padding-top: 2cm;
+    /* overflow: -moz-scrollbars-vertical;*/
+     /*overflow-y:scroll;*/
 
-::-webkit-scrollbar:horizontal {
-    height: 12px;
-}
+     overflow-y: scroll;
+     overflow: auto;
 
-::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, .5);
-    border-radius: 10px;
-    border: 2px solid #ffffff;
-}
-
-::-webkit-scrollbar-track {
-    border-radius: 10px;  
-    background-color: #ffffff; 
-}
-}
 }
 
 
@@ -347,18 +332,6 @@ margin-left: 700px;
 	  /*position: relative;*/
 	  
 	}
-	
-	
-.dragImg{
-	/*position: relative;
-    display: table;
-    text-align: center;*/
-    /*height: 100%; 
-    width: 100%;*/
-}
-		
-
-	  
 
 
 #dropHere {
@@ -397,14 +370,6 @@ li span {
 	
 	#slider { margin: 10px; }
 	
-	/*.dragImg{
-		display: block;
-		/*position:absolute;*/
-		
-		/*left:50%;
-		top: 50%;
-		
-		}*/
 		
 		.item-0{
 			
@@ -412,23 +377,13 @@ li span {
 			left: 50%;
 			
 			}
-/*			
-.ui-resizable-se {
-    width: 25px;
-    height: 25px;
-}*/
+/
 
 #save2{
 	top:480px;
 	left:840px;
 	
 }
-
-#wrapper{
-	/*text-align: center;
-  font: 30px/300px Helvetica, Arial, sans-serif;*/
-}
-
 
 
 #scale-element.reset {
@@ -456,11 +411,7 @@ left:0px;
 
 ul#smiley li {
 	display: inline;
-/*	width: auto;*/
-/*position:relative;
-display: inline-block;
-float:left;
-padding:10px;*/
+
 }
 
 #happy1{
@@ -493,8 +444,9 @@ padding:10px;*/
 	left:646px;
 }
 #zoomwrapper1{
-	/*width:100px;
-	height:100px;*/
+	width:100px;
+	height:100px;
+	text-align: center;
 }
 #drop{
 	display:none;
@@ -512,6 +464,14 @@ padding:10px;*/
 #b1c + counter{
 	width:100px;
 	height: 100px;
+}
+#zoom1{
+	width:100px;
+	height:100px;
+	margin: 0 auto;
+}
+#house{
+	/*margin-left: 10px;*/
 }
 
 

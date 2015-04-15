@@ -317,13 +317,14 @@ var app = {
 
       $.mobile.pageContainer.prepend(panel);
       $("#mypanel").panel().listview();
-      $("#mypanel").listview();
+      $("#mypanel").listview().scrollLeft( 300 );
       //prompts for the drawing section 
       $('#mypanel').append('<div id="house" class="zoomwrapper1"><div id="zoom1"><img id="house" src="img/house.png" height="100" weight="100"></img></div></div>');
       $('#mypanel').append('<div id="cloud" class="zoomwrapper1"><div id="zoom1"><img id="cloud" src="img/cloud.png" height="100" weight="100"></img></div></div>');
       $('#mypanel').append('<div id="tree"  class="zoomwrapper1"><div id="zoom1"><img id="tree"  src="img/tree.png"  height="100" weight="100"></img></div></div>');
       $('#mypanel').append('<div id="flower" class="zoomwrapper1"><div id="zoom1"><img id="flower" src="img/flower.png" height="100" weight="100"></img></div></div>');
       $('#mypanel').append('<div id="sun" class="zoomwrapper1"><div id="zoom1"><img id="sun" src="img/sun.png" height="100" weight="100"></img></div></div>');
+      
       $('#section2').append($("#mypanel"))
 
 

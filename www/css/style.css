@@ -241,49 +241,22 @@ margin-left: 700px;
 
 #mypanel{
 	
+	background: white repeat scroll;
 	width:200px;
 	margin: 0 auto;
-	/*margin-left: 10px;*/
-	/*margin-right: 5px;*/
-	padding right: 150px;
+	/*margin-right: 3px;*/
+	padding right: 150px red;
 	height: 100%;
 	z-index: 10000;
 	color: white;
-     padding-top: 3cm;
-     overflow-y:visible;
-    /* -webkit-overflow-scrolling:touch;*/
-	::-webkit-scrollbar {
-    -webkit-appearance: none;
-    ::-webkit-scrollbar:vertical {
-    width: 12px;
+     padding-top: 2cm;
+    /* overflow: -moz-scrollbars-vertical;*/
+     /*overflow-y:scroll;*/
+
+     overflow-y: scroll;
+     overflow: auto;
 
 }
-
-::-webkit-scrollbar:horizontal {
-    height: 12px;
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, .5);
-    border-radius: 10px;
-    border: 2px solid #ffffff;
-}
-
-::-webkit-scrollbar-track {
-    border-radius: 10px;  
-    background-color: #ffffff; 
-}
-}
-}
-
-
-
-#color{
-	/*width:50px;
-	height:40px;*/
-
-}
-
 
   #controls {
 
@@ -311,9 +284,34 @@ margin-left: 700px;
     height:50px;
     -webkit-appearance: none;*/
 }
-  input[type="color"]#color{
-  	/*padding: 0;*/
+  input#color[type="color"]{
+  	/*background-color:rgba(100, 45, 255, 0);*/
+  	margin-left:48px;
+  	width:75px;
+  	height:60px;
+  	top:40px;
+  	left:40px;
+  	webkit-box-shadow: inset 0 0px 30px rgba(0,0,0,.2);
+  	box-shadow: inset 0 0px 0px rgba(0,0,0,.2);
+
+
   }
+
+  div#controls div.ui-input-text {
+  	background-color: rgba(0,0,0,0) !important; 
+  	border-style: none;
+  	/*webkit-box-shadow: inset 0 0px 0px rgba(0,0,0,.2);
+  	box-shadow:inset 0 0px 0px rgba(0,0,0,.2);*/
+  }
+
+  div#controls div.ui-shadow-inset {
+  	/*background-color: rgba(0,0,0,0) !important; */
+  	-webkit-box-shadow:inset 0 0px 0px rgba(0,0,0,0);
+  	box-shadow:inset 0 0px 0px rgba(0,0,0,0);
+  }
+
+
+
   input[type="range"]#rangecolor{
   	/*border: 1px solid blue;*/
   }
@@ -452,9 +450,9 @@ ul#smiley li {
 }
 #crayon{
 	position:absolute;
-	top:-20px;
-	left:30px;
-	z-index:100;
+	top:-13px;
+	left:720px;
+	/*z-index:1;*/
 }
 #juliana{
 	position:absolute;
