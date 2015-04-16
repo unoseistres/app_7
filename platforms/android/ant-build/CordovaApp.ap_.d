@@ -54,6 +54,7 @@
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/style.css \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/style2.css \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/ui-icons_222222_256x240.png \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/css/images/thickness.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/images/ui-bg_glass_100_f6f6f6_1x400.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/images/ui-bg_glass_100_fdf5ce_1x400.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/images/ui-bg_glass_65_ffffff_1x400.png \
@@ -86,6 +87,7 @@
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/pias_text.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/save.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/sun.png \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/img/thickness.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/tree.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/welcomewritten2.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/wire_frames-01.png \

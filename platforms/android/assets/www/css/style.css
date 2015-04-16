@@ -288,7 +288,7 @@ margin-left: 700px;
   	/*background-color:rgba(100, 45, 255, 0);*/
   	margin-left:48px;
   	width:75px;
-  	height:60px;
+  	height:63px;
   	top:40px;
   	left:40px;
   	webkit-box-shadow: inset 0 0px 30px rgba(0,0,0,.2);
@@ -309,6 +309,30 @@ margin-left: 700px;
   	-webkit-box-shadow:inset 0 0px 0px rgba(0,0,0,0);
   	box-shadow:inset 0 0px 0px rgba(0,0,0,0);
   }
+
+  div.ui-slider{
+  	border:none;
+  	background:  url("images/thickcrayess.png") 50% top repeat-x;
+  	margin: 10px;
+  	top:10px;
+  	left:10px;
+  	color: rgba(255,255,255,0);
+  	padding: 7px;
+  	/*width:1px;*/
+
+
+  }
+
+  /*div.ui-slider div.ui-widget-content{
+  	border:none;
+  	background:  url("images/thickness.png") 50% top repeat-x;
+  	color: rgba(255,255,255,0);
+  }*/
+
+  div.ui-slider-horizontal .ui-slider-handle {
+  	top:0.7em;
+  }
+
 
 
 
@@ -384,7 +408,10 @@ li span {
 	border:2px solid;
 	}
 	
-	#slider { margin: 10px; }
+	#slider { 
+		margin: 10px; 
+		display: block;
+	}
 	
 		
 		.item-0{
@@ -393,7 +420,7 @@ li span {
 			left: 50%;
 			
 			}
-/
+
 
 #save2{
 	top:480px;
@@ -450,7 +477,13 @@ ul#smiley li {
 }
 #crayon{
 	position:absolute;
-	top:-13px;
+	top:-11px;
+	left:720px;
+	/*z-index:1;*/
+}
+#slide{
+	position:absolute;
+	top:66px;
 	left:720px;
 	/*z-index:1;*/
 }
