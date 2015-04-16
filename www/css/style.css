@@ -312,12 +312,14 @@ margin-left: 700px;
 
   div.ui-slider{
   	border:none;
-  	background:  url("images/thickcrayess.png") 50% top repeat-x;
-  	margin: 10px;
+  	background:  url("images/thickcrayess.png") 30% top repeat-x;
+  	/*margin: 10px;*/
   	top:10px;
   	left:10px;
   	color: rgba(255,255,255,0);
   	padding: 7px;
+  	width:100px;
+  	height: 30px;
   	/*width:1px;*/
 
 
@@ -484,7 +486,10 @@ ul#smiley li {
 #slide{
 	position:absolute;
 	top:66px;
-	left:720px;
+	left:743px;
+	 width:16%; 
+	 height:10%;
+	 margin:1px;
 	/*z-index:1;*/
 }
 #juliana{
