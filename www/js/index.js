@@ -1,4 +1,3 @@
-
 var app = {
     // Application Constructor
     initialize: function() {
@@ -324,7 +323,15 @@ var app = {
       $('#mypanel').append('<div id="tree"  class="zoomwrapper1"><div id="zoom1"><img id="tree"  src="img/tree.png"  height="100" weight="100"></img></div></div>');
       $('#mypanel').append('<div id="flower" class="zoomwrapper1"><div id="zoom1"><img id="flower" src="img/flower.png" height="100" weight="100"></img></div></div>');
       $('#mypanel').append('<div id="sun" class="zoomwrapper1"><div id="zoom1"><img id="sun" src="img/sun.png" height="100" weight="100"></img></div></div>');
-      
+      $('#mypanel').append('<div id="p1" class="zoomwrapper1"><div id="zoom1"><img id="p1" src="img/p01.png" height="100" weight="100"></img></div></div>');
+      $('#mypanel').append('<div id="p2" class="zoomwrapper1"><div id="zoom1"><img id="p2" src="img/p02.png" height="100" weight="100"></img></div></div>');
+      $('#mypanel').append('<div id="p3" class="zoomwrapper1"><div id="zoom1"><img id="p3" src="img/p03.png" height="100" weight="100"></img></div></div>');
+      $('#mypanel').append('<div id="p4" class="zoomwrapper1"><div id="zoom1"><img id="p4" src="img/p04.png" height="100" weight="100"></img></div></div>');
+      $('#mypanel').append('<div id="p5" class="zoomwrapper1"><div id="zoom1"><img id="p5" src="img/p05.png" height="100" weight="100"></img></div></div>');
+      $('#mypanel').append('<div id="p6" class="zoomwrapper1"><div id="zoom1"><img id="p6" src="img/p06.png" height="100" weight="100"></img></div></div>');
+
+
+
       $('#section2').append($("#mypanel"))
 
 
@@ -589,9 +596,3 @@ var app = {
 
     }
 });
-
-
-
-
-
-

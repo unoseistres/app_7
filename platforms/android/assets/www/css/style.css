@@ -486,9 +486,10 @@ ul#smiley li {
 #slide{
 	position:absolute;
 	top:66px;
-	left:735px;
+	left:743px;
 	 width:16%; 
 	 height:10%;
+	 margin:1px;
 	/*z-index:1;*/
 }
 #juliana{
