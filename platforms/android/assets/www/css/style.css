@@ -313,13 +313,13 @@ margin-left: 700px;
   div.ui-slider{
   	border:none;
   	background:  url("images/thickcrayess.png") 30% top repeat-x;
-  	/*margin: 10px;*/
-  	top:10px;
-  	left:10px;
+  	margin: 40px;
+  	top:65px;
+  	left:-15px;
   	color: rgba(255,255,255,0);
-  	padding: 7px;
-  	width:100px;
-  	height: 30px;
+  	padding:22px;
+  	width:65px;
+  	height: 10px;
   	/*width:1px;*/
 
 
@@ -331,8 +331,31 @@ margin-left: 700px;
   	color: rgba(255,255,255,0);
   }*/
 
-  div.ui-slider-horizontal .ui-slider-handle {
-  	top:0.7em;
+  div#slider div.ui-slider div.ui-slider-horizontal div.ui-widget div.ui-widget-content div.ui-corner-all {
+  	/*top:50px;
+  	left:10px;*/
+  	height:30px;
+  	margin:0px;
+
+  }
+
+  div#slider div.ui-slider-handle {
+  	height:40px;
+  }
+
+  div#slider div.ui-slider {
+  	height:30px;
+  	width:50px;
+  }
+
+  div#slider div.ui-widget{
+  		height:40px;
+  } 
+  div#slider div.ui-widget-content{
+height:40px;
+  } 
+  div#slider div.ui-corner-all{
+height:40px;
   }
 
 
@@ -411,7 +434,8 @@ li span {
 	}
 	
 	#slider { 
-		margin: 10px; 
+		margin: 0px; 
+		top:60px;
 		display: block;
 	}
 	
@@ -527,3 +551,53 @@ ul#smiley li {
 #house{
 	/*margin-left: 10px;*/
 }
+/*#color{
+	position: absolute;
+	top:324px;
+	left:798px;
+	width:50px;
+	height:39px;
+	border: solid;
+	margin-bottom: 10px;
+}*/
+.form-group {
+            margin: 20px 0;
+            border: dotted;
+            top:-78px;
+            left: 796px;
+            position: absolute;
+            width:50px;
+            height: 50px;
+            z-index:5;
+           /* padding-bottom: 10px;*/
+ }
+ #hidden-input{
+
+ 			/*margin: 20px 0;
+            border: solid;
+            top:310px;
+            left: 796px;
+            position: absolute;
+            width:50px;
+            height: 50px;
+            border:solid red;
+            width:100px;
+            height:100px;
+            z-index:10;
+            background-color:red;*/
+            padding-bottom: 50px;
+ }
+ div.minicolors-grid-inner{
+ 	width:50px;
+ 	height:50px;
+
+
+ }
+ div.minicolors-grid minicolors-sprite{
+width:50px;
+ 	height:50px;
+ }
+ div.minicolors-panel .minicolors-slider-hue{
+ 	width:50px;
+ 	height:50px;
+ }

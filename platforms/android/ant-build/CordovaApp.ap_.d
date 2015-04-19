@@ -37,6 +37,7 @@
 /Users/dickweed/documents/app_7/platforms/android/assets/www/spec \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/spec.html \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/colorPicker.css \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/css/colorPicker.min.css \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/examples.css \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/images \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/index.css \
@@ -47,6 +48,7 @@
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/jquery-ui.theme.css \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/jquery-ui.theme.min.css \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/jquery.fullPage.css \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/css/jquery.minicolors.css \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/jquery.mobile-1.4.5.min.css \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/jquery.panzoom.min.css \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/normalize.css \
@@ -104,6 +106,9 @@
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/wire_frames-04.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/wire_frames-05.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/js/colorPicker.js \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/js/colorPicker.min.js \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/js/colors-5x4.json \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/js/colors.json \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/js/examples.js \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/js/fullPage.js-master \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/js/hammer.js \
@@ -115,6 +120,8 @@
 /Users/dickweed/documents/app_7/platforms/android/assets/www/js/jquery-ui.min.js \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/js/jquery.fullPage.js \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/js/jquery.hammer.js \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/js/jquery.min.js \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/js/jquery.minicolors.js \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/js/jquery.mobile-1.4.5 \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/js/jquery.mobile-1.4.5.js \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/js/jquery.ui.touch-punch.js \
@@ -127,6 +134,7 @@
 /Users/dickweed/documents/app_7/platforms/android/assets/www/js/pinchzoom.js \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/js/SavePhotoPlugin.js \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/js/simple-slider.js \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/js/stylePicker.css \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/js/touch-punch.js \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/js/zepto.min.js \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/js/fullPage.js-master/bower.json \

@@ -261,11 +261,11 @@ margin-left: 700px;
   #controls {
 
 	position: relative;
-	margin: 22px 1% 0 0;
+	margin: 0 1% 0 0;
 	float: right;	
 	width: 150px;
 	height: auto;
-	overflow: hidden;
+	overflow: visible;
 	top:-30px;
   }
   
@@ -310,20 +310,20 @@ margin-left: 700px;
   	box-shadow:inset 0 0px 0px rgba(0,0,0,0);
   }
 
-  div.ui-slider{
+/*  div.ui-slider{
   	border:none;
   	background:  url("images/thickcrayess.png") 30% top repeat-x;
-  	/*margin: 10px;*/
-  	top:10px;
-  	left:10px;
+  	margin: 40px;
+  	top:65px;
+  	left:-15px;
   	color: rgba(255,255,255,0);
-  	padding: 7px;
-  	width:100px;
-  	height: 30px;
-  	/*width:1px;*/
+  	padding:22px;
+  	width:65px;
+  	height: 10px;
+  	width:1px;
 
 
-  }
+  }*/
 
   /*div.ui-slider div.ui-widget-content{
   	border:none;
@@ -331,9 +331,70 @@ margin-left: 700px;
   	color: rgba(255,255,255,0);
   }*/
 
-  div.ui-slider-horizontal .ui-slider-handle {
-  	top:0.7em;
+  div#slider {
+  	width: auto;
+  	position: relative;
+  	overflow: visible;
+  	background: url("../img/thickness2.png") no-repeat;
+  	background-size: 100% 100%;
+	margin: 0.5em auto 1em;
+	padding: 0.7em 0.1em;
+	display: block;
+	/*border: none;*/
+	border-radius: .3125em;
+	/*height: 50px;*/
+	background-color: #f6f6f6;
+ 	border: 1px solid #ddd;
+  	color: #333;
+	box-shadow: 0 1px 3px rgba(0,0,0,.15);
+	text-shadow: 0 1px 0 #f3f3f3;
+
+
+
+ }
+
+
+
+ div#slider span.ui-slider-handle, .ui-slider-horizontal .ui-slider-handle {
+  	background: #f6f6f6;
+  	top: auto;
+  	bottom: -0.6em;
+  	/*margin-left: 0;*/
+  	border-radius: 1.3em;
+  	/*border: 2px solid white;*/
+  	outline: none;
+  	border: 1px solid #ddd;
+  	box-shadow: 0 1px 3px rgba(0,0,0,.15);
+	text-shadow: 0 1px 0 #f3f3f3;
   }
+
+
+/*  div#slider div.ui-slider div.ui-slider-horizontal div.ui-widget div.ui-widget-content div.ui-corner-all {
+  	top:50px;
+  	left:10px;
+  	height:30px;
+  	margin:0px;
+
+  }
+
+  div#slider div.ui-slider-handle {
+  	height:40px;
+  }
+
+  div#slider div.ui-slider {
+  	height:30px;
+  	width:50px;
+  }
+
+  div#slider div.ui-widget{
+  		height:40px;
+  } 
+  div#slider div.ui-widget-content{
+height:40px;
+  } 
+  div#slider div.ui-corner-all{
+height:40px;
+  }*/
 
 
 
@@ -409,14 +470,6 @@ li span {
 	left:5%;
 	border:2px solid;
 	}
-	
-	#slider { 
-/*		margin: 50px; 
-*/		
-top:10px;
-display: block;
-	}
-	
 		
 		.item-0{
 			
@@ -479,12 +532,6 @@ ul#smiley li {
 	top:210px;
 	left:180px;
 }
-#crayon{
-	position:absolute;
-	top:-11px;
-	left:720px;
-	/*z-index:1;*/
-}
 #slide{
 	position:absolute;
 	top:66px;
@@ -529,36 +576,60 @@ ul#smiley li {
 #house{
 	/*margin-left: 10px;*/
 }
-/*#color{
-	position: absolute;
-	top:324px;
-	left:798px;
-	width:50px;
-	height:39px;
-	border: solid;
-	margin-bottom: 10px;
-}*/
-.form-group {
-            margin: 20px 0;
-            border: dotted;
-            top:310px;
-            left: 796px;
-            position: absolute;
-            width:50px;
-            height: 50px;
- }
-/* #hidden-input{
 
- 			margin: 20px 0;
-            border: solid;
-            top:310px;
+.color-picker {
+	/*width: 100%;
+	border: 1px solid blue;*/
+	overflow: visible;
+	border-radius: .3125em;
+	height: 50px;
+	background-color: #f6f6f6;
+ 	border: 1px solid #ddd;
+  	color: #333;
+	box-shadow: 0 1px 3px rgba(0,0,0,.15);
+	text-shadow: 0 1px 0 #f3f3f3;
+
+            /*margin: 20px 0;
+            border: dotted;
+            top:-78px;
             left: 796px;
             position: absolute;
             width:50px;
             height: 50px;
-            border:solid red;
-            width:100px;
-            height:100px;
-            z-index:10;
-            background-color:red;
+            z-index:5;*/
+           /* padding-bottom: 10px;*/
+ }
+ #crayon{
+	position:absolute;
+	top:0;
+	/*margin-top: -25px;*/
+	left:50%;
+	margin-left:-62px;
+	height: 50px;
+	width: auto;
+	/*z-index:1;*/
+}
+.minicolors-theme-default.minicolors {
+	width: 56px;
+	height: 25px;
+  	margin: 12px 37px 0 57px;
+}
+
+/* #hidden-input{  
+    padding-bottom: 50px;
  }*/
+/*div#hidden-input div.minicolors-grid {
+	left:-128px;
+	width:250px;
+	height:150px;
+}
+div#hidden-input div.minicolors-sprite{
+	left:-128px;
+	width:250px;
+	height:150px;
+}
+div#hidden-input div.minicolors{
+	left:-128px;
+	width:250px;
+	height:150px;
+}*/

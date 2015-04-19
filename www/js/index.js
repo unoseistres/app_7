@@ -53,7 +53,7 @@ var app = {
                     inline: $(this).attr('data-inline') === 'true',
                     letterCase: $(this).attr('data-letterCase') || 'lowercase',
                     opacity: $(this).attr('data-opacity'),
-                    position: $(this).attr('data-position') || 'bottom left',
+                    position: $(this).attr('data-position') || 'bottom right',
                     change: function(hex, opacity) {
                         var log;
                         try {
