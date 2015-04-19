@@ -26,6 +26,8 @@ minimum-scale=1, width=device-width, height=device-height"/>
 <script src="js/touch-punch.js"></script>
 <script src="js/hammer.js"></script>
 <script src="js/jquery.hammer.js"></script>
+<script src="js/jquery.minicolors.js"></script>
+    
 
 <link rel="stylesheet" type="text/css" href="css/style2.css" media="all"/>
 
@@ -33,10 +35,12 @@ minimum-scale=1, width=device-width, height=device-height"/>
 <link rel="stylesheet" href="css/jquery-ui.min.css">
 <link rel="stylesheet" href="css/jquery-ui.structure.min.css">	
 <link rel="stylesheet" href="css/jquery-ui.theme.css">
-<link rel="stylesheet" type="text/css" href="css/style.css"/>	
+
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" href="css/jquery.minicolors.css">
+	
 
 <script type="text/javascript" charset="utf-8" src="SavePhotoPlugin.js"></script>
-
 <script type= "text/javascript" src= "cordova.js"></script>
 <script type= "text/javascript" src= "js/index.js"></script>
 <script type="text/javascript"></script>
@@ -92,9 +96,17 @@ minimum-scale=1, width=device-width, height=device-height"/>
 			<div id="where">
                   <img id="crayon"src="img/crayon.png"  width="20%" height="20%"/>
                   <img id="slide"src="img/thickness.png" />
+                  <!-- <div id="color" type="color" value="#ff0000" onchange="updateColor(this.value)"></div> -->
+                  <div class="form-group">
+        			<label for="hidden-input">Hidden Input</label>
+        			<br>
+        			<input type="hidden" id="hidden-input" class="demo" value="#db913d">
+    			  </div>
+
 				<div id="controls"> 
 					
-				     <input id="color" type="color" value="#ff0000" onchange="updateColor(this.value)"/>  
+				     <!-- <input id="color" type="color" value="#ff0000" onchange="updateColor(this.value)"/>  -->
+				    <!--  <input id="color" type="color" value="#ff0000" data-control="hue" onchange="updateColor(this.value)"></div>  -->
 				 
 				     <div id="slider"></div>
 				     <button id="eraser" onclick="myEraser()">

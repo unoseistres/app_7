@@ -36,6 +36,7 @@
 /Users/dickweed/documents/app_7/platforms/android/assets/www/res \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/spec \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/spec.html \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/css/colorPicker.css \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/examples.css \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/images \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/index.css \
@@ -53,6 +54,7 @@
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/simple-slider.css \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/style.css \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/style2.css \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/css/stylePicker.css \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/ui-icons_222222_256x240.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/images/thickness.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/images/ui-bg_glass_100_f6f6f6_1x400.png \
@@ -82,6 +84,12 @@
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/juliana_1.gif \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/logo.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/marker.png \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/img/p01.png \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/img/p02.png \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/img/p03.png \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/img/p04.png \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/img/p05.png \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/img/p06.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/pedro_sketch.gif \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/pedro_sketch.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/pias_text.png \
@@ -95,6 +103,7 @@
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/wire_frames-03.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/wire_frames-04.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/wire_frames-05.png \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/js/colorPicker.js \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/js/examples.js \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/js/fullPage.js-master \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/js/hammer.js \

@@ -411,8 +411,10 @@ li span {
 	}
 	
 	#slider { 
-		margin: 10px; 
-		display: block;
+/*		margin: 50px; 
+*/		
+top:10px;
+display: block;
 	}
 	
 		
@@ -527,3 +529,36 @@ ul#smiley li {
 #house{
 	/*margin-left: 10px;*/
 }
+/*#color{
+	position: absolute;
+	top:324px;
+	left:798px;
+	width:50px;
+	height:39px;
+	border: solid;
+	margin-bottom: 10px;
+}*/
+.form-group {
+            margin: 20px 0;
+            border: dotted;
+            top:310px;
+            left: 796px;
+            position: absolute;
+            width:50px;
+            height: 50px;
+ }
+/* #hidden-input{
+
+ 			margin: 20px 0;
+            border: solid;
+            top:310px;
+            left: 796px;
+            position: absolute;
+            width:50px;
+            height: 50px;
+            border:solid red;
+            width:100px;
+            height:100px;
+            z-index:10;
+            background-color:red;
+ }*/
