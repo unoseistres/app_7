@@ -638,3 +638,151 @@ var app = {
 
     }
 });
+
+///////////////////////////////////////////////////////////////////////////////////////SECTION 4
+      // Variables for referencing the canvas and 2dcanvas context
+  // 
+   var canvas2,ctx2;
+        var coloring2;
+
+        $(document).ready( function() {
+
+            $('.demo').each( function() {
+                //
+                // Dear reader, it's actually very easy to initialize MiniColors. For example:
+                //
+                //  $(selector).minicolors();
+                //
+                // The way I've done it below is just for the demo, so don't get confused
+                // by it. Also, data- attributes aren't supported at this time. Again,
+                // they're only used for the purposes of this demo.
+                //
+
+                $(this).minicolors({
+                    control: $(this).attr('data-control') || 'hue',
+                    defaultValue: $(this).attr('data-defaultValue') || '',
+                    inline: $(this).attr('data-inline') === 'true',
+                    letterCase: $(this).attr('data-letterCase') || 'lowercase',
+                    opacity: $(this).attr('data-opacity'),
+                    position: $(this).attr('data-position') || 'bottom right',
+                    change: function(hex, opacity) {
+                        var log;
+                        try {
+                            log = hex ? hex : 'transparent';
+                      
+                            if( opacity ) log += ', ' + opacity;
+
+                            var c = log;
+                            coloring= c;
+                          
+                            console.log("HEX: " + '' + log);
+                            
+                        } catch(e) {}
+                    },
+                    
+                    theme: 'default'
+                });
+
+                
+
+            });
+        
+        });
+
+        var s2; 
+
+              $(function() {
+              $( "#slider2" ).slider({
+                  value:1,
+                    min: 1,
+                    max: 15,
+                    step: 1,
+                slide: function( event, ui ) {
+                var x2 = ui.value;
+                s2= x2;
+                console.log(s2);
+                      }
+                  });   
+              });
+// Variables to keep track of the mouse position and left-button status 
+    var mouseX2,mouseY2,mouseDown2=0;
+    // Variables to keep track of the touch position
+    var touchX2,touchY2;
+    // Keep track of the old/last position when drawing a line
+    // We set it to -1 at the start to indicate that we don't have a good value for it yet
+    var lastX2,lastY2=-1;
+    // Draws a line between the specified position on the supplied canvas name
+    // Parameters are: A canvas context, the x position, the y position, the size of the dot
+    function drawLine2(ctx2,x2,y2,s2) {
+        // If lastX is not set, set lastX and lastY to the current position 
+        if (lastX2==-1) {
+            lastX2=x2;
+            lastY2=y2;
+        }
+        // Let's use black by setting RGB values to 0, and 255 alpha (completely opaque)
+        r=0; g=0; b=0; a=255;
+
+
+        // Select a fill style
+        // ctx.strokeStyle = "rgba("+r+","+g+","+b+","+(a/255)+")";
+        ctx2.strokeStyle = coloring;
+        // Set the line "cap" style to round, so lines at different angles can join into each other
+        ctx2.lineCap = "round";
+        //ctx.lineJoin = "round";
+        // Draw a filled line
+        ctx2.beginPath();
+        // First, move to the old (previous) position
+        ctx2.moveTo(lastX2,lastY2);
+        // Now draw a line to the current touch/pointer position
+        ctx2.lineTo(x2,y2);
+        // Set the line thickness and draw the line
+        ctx2.lineWidth = s2;
+        ctx2.stroke();
+        ctx2.closePath();
+        // Update the last position to reference the current position
+        lastX2=x2;
+        lastY2=y2;
+    } 
+    
+        // Clear the canvas context using the canvas width and height
+    function clearCanvas2(canvas2,ctx2) {
+        ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
+    }
+    // Keep track of the mouse button being pressed and draw a dot at current location
+    function sketchpad_mouseDown2() {
+        mouseDown2=1;
+        drawLine2(ctx2,mouseX2,mouseY2,s2);
+    }
+    // Keep track of the mouse button being released
+    function sketchpad_mouseUp2() {
+        mouseDown2=0;
+        // Reset lastX and lastY to -1 to indicate that they are now invalid, since we have lifted the "pen"
+        lastX2=-1;
+        lastY2=-1;
+    }
+    // Keep track of the mouse position and draw a dot if mouse button is currently pressed
+    function sketchpad_mouseMove2(e) { 
+        // Update the mouse co-ordinates when moved
+        getMousePos2(e);
+        // Draw a dot if the mouse button is currently being pressed
+        if (mouseDown2==1) {
+            drawLine2(ctx2,mouseX2,mouseY2,s2);
+        }
+    }
+    // Get the current mouse position relative to the top-left of the canvas
+    function getMousePos2(e) {
+        if (!e)
+            var e = event;
+        if (e.offsetX) {
+            mouseX2 = e.offsetX;
+            mouseY2 = e.offsetY;
+        }
+        else if (e.layerX) {
+            mouseX2 = e.layerX;
+            mouseY2 = e.layerY;
+        }
+     }
+     
+
+
+

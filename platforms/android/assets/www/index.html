@@ -61,8 +61,8 @@ minimum-scale=1, width=device-width, height=device-height"/>
 		<li data-menuanchor="firstpage"><a href="#section1" ></a></li>
 		<li data-menuanchor="secondpage"><a href="#section2" ></a></li>
 		<li data-menuanchor="3rdPage"><a href="#section3" ></a></li>
-		<!-- <li data-menuanchor="4thPage"><a href="#section4" ></a></li>
-		<li data-menuanchor="lastPage"><a href="#section5" ></a></li> -->
+		<li data-menuanchor="4thPage"><a href="#section4" ></a></li>
+		<!-- <li data-menuanchor="lastPage"><a href="#section5" ></a></li> -->
 		
 			
 	</ul>
@@ -168,15 +168,57 @@ minimum-scale=1, width=device-width, height=device-height"/>
 	</div>
 	
 </div>
+</div>
+
+<div id="section4" data-role="page" style="overflow-x: visible">
+	<div data-role="main" class="ui-content">
+	<!-- <img id="dibuja"src="img/dibujatucasa.png" id="welcome"/>	 -->
+			<div id="where">
+                 
+
+				<div id="controls"> 
+					
+					<div class="color-picker">
+        				<img id="crayon"src="img/crayon.png"  width="20%" height="20%"/>
+        				<input type="hidden" id="hidden-input" class="demo" value="#db913d">
+    			  	</div>
+				     
+				     <div id="slider2"></div>
+				     <button id="eraser" onclick="myEraser()">
+				     	<img src="img/eraser.png" width="25%" height="25%" id="dagger" />
+				     </button>
+				     <button id="myMarker" onclick="myMarker()">
+				     	<img src="img/marker.png" width="25%" height="25%" id="dagger" />
+				     </button>
+				     
+				     <button type="submit" value="Clear" onclick="clearCanvas(canvas,ctx);">
+				     	<img src="img/clear.png" width="25%" height="25%" id="dagger" />
+				     </button>
+				     
+				     <button type="button" value="Save" size="23" onclick="save()">
+				     	<img src="img/save.png" width="25%" height="25%" id="dagger" />
+				     </button>
+
+
+			    </div>
+    
+				</div>	
+
+	</div>
+	
+	<div id="drop"></div>
+
+
+	<canvas id="can" width="670" height="410" style="position:absolute;top:15%;left:5%;border:2px dotted;" ondrop="drop(event)" ondragover="allowDrop(event)" ></canvas>
+
+	
+	
+</div> 
 
 
 
 
 <!--
-<div id="section3">
-	<div data-role="main" class="ui-content">
-	</div>
-</div>  
 <div id="section4">
 	<div data-role="main" class="ui-content">	
 	</div>
