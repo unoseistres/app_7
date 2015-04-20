@@ -172,7 +172,8 @@ minimum-scale=1, width=device-width, height=device-height"/>
 
 <div id="section4" data-role="page" style="overflow-x: visible">
 	<div data-role="main" class="ui-content">
-		<div id="where">
+	<!-- <img id="dibuja"src="img/dibujatucasa.png" id="welcome"/>	 -->
+			<div id="where">
                  
 
 				<div id="controls"> 
@@ -182,7 +183,7 @@ minimum-scale=1, width=device-width, height=device-height"/>
         				<input type="hidden" id="hidden-input" class="demo" value="#db913d">
     			  	</div>
 				     
-				     <div id="slider"></div>
+				     <div id="slider2"></div>
 				     <button id="eraser" onclick="myEraser()">
 				     	<img src="img/eraser.png" width="25%" height="25%" id="dagger" />
 				     </button>
@@ -201,17 +202,23 @@ minimum-scale=1, width=device-width, height=device-height"/>
 
 			    </div>
     
-				</div>
+				</div>	
 
-				<canvas id="can" width="670" height="410" style="position:absolute;top:15%;left:5%;border:2px dotted;" ondrop="drop(event)" ondragover="allowDrop(event)" ></canvas>
 	</div>
-</div>  
+	
+	<div id="drop"></div>
+
+
+	<canvas id="can" width="670" height="410" style="position:absolute;top:15%;left:5%;border:2px dotted;" ondrop="drop(event)" ondragover="allowDrop(event)" ></canvas>
+
+	
+	
+</div> 
 
 
 
 
 <!--
-
 <div id="section4">
 	<div data-role="main" class="ui-content">	
 	</div>

@@ -638,3 +638,72 @@ var app = {
 
     }
 });
+
+///////////////////////////////////////////////////////////////////////////////////////SECTION 4
+      // Variables for referencing the canvas and 2dcanvas context
+  // 
+   var canvas2,ctx2;
+        var coloring2;
+
+        $(document).ready( function() {
+
+            $('.demo').each( function() {
+                //
+                // Dear reader, it's actually very easy to initialize MiniColors. For example:
+                //
+                //  $(selector).minicolors();
+                //
+                // The way I've done it below is just for the demo, so don't get confused
+                // by it. Also, data- attributes aren't supported at this time. Again,
+                // they're only used for the purposes of this demo.
+                //
+
+                $(this).minicolors({
+                    control: $(this).attr('data-control') || 'hue',
+                    defaultValue: $(this).attr('data-defaultValue') || '',
+                    inline: $(this).attr('data-inline') === 'true',
+                    letterCase: $(this).attr('data-letterCase') || 'lowercase',
+                    opacity: $(this).attr('data-opacity'),
+                    position: $(this).attr('data-position') || 'bottom right',
+                    change: function(hex, opacity) {
+                        var log;
+                        try {
+                            log = hex ? hex : 'transparent';
+                      
+                            if( opacity ) log += ', ' + opacity;
+
+                            var c = log;
+                            coloring= c;
+                          
+                            console.log("HEX: " + '' + log);
+                            
+                        } catch(e) {}
+                    },
+                    
+                    theme: 'default'
+                });
+
+                
+
+            });
+        
+        });
+
+        var s2; 
+
+              $(function() {
+              $( "#slider2" ).slider({
+                  value:1,
+                    min: 1,
+                    max: 15,
+                    step: 1,
+                slide: function( event, ui ) {
+                var x2 = ui.value;
+                s2= x2;
+                console.log(s2);
+                      }
+                  });   
+              });
+
+
+
