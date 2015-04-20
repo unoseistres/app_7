@@ -63,6 +63,8 @@ var app = {
 
                             var c = log;
                             coloring= c;
+                            var c2 = log;
+                            coloring2= c2;
                           
                             console.log("HEX: " + '' + log);
                             
@@ -661,41 +663,41 @@ var app = {
    var canvas2,ctx2;
         var coloring2;
 
-        $(document).ready( function() {
+        // $(document).ready( function() {
 
-            $('.demo').each( function() {
+        //     $('.demo').each( function() {
                
-                $(this).minicolors({
-                    control: $(this).attr('data-control') || 'hue',
-                    defaultValue: $(this).attr('data-defaultValue') || '',
-                    inline: $(this).attr('data-inline') === 'true',
-                    letterCase: $(this).attr('data-letterCase') || 'lowercase',
-                    opacity: $(this).attr('data-opacity'),
-                    position: $(this).attr('data-position') || 'bottom right',
-                    change: function(hex, opacity) {
-                        var log;
-                        try {
-                            log = hex ? hex : 'transparent';
+        //         $(this).minicolors({
+        //             control: $(this).attr('data-control') || 'hue',
+        //             defaultValue: $(this).attr('data-defaultValue') || '',
+        //             inline: $(this).attr('data-inline') === 'true',
+        //             letterCase: $(this).attr('data-letterCase') || 'lowercase',
+        //             opacity: $(this).attr('data-opacity'),
+        //             position: $(this).attr('data-position') || 'bottom right',
+        //             change: function(hex, opacity) {
+        //                 var log;
+        //                 try {
+        //                     log = hex ? hex : 'transparent';
                       
-                            if( opacity ) log += ', ' + opacity;
+        //                     if( opacity ) log += ', ' + opacity;
 
-                            var c2 = log;
-                            coloring2= c2;
-                            // coloring2= c;
+        //                     var c2 = log;
+        //                     coloring2= c2;
+        //                     // coloring2= c;
                           
-                            console.log("HEX: " + '' + log);
+        //                     console.log("HEX: " + '' + log);
                             
-                        } catch(e) {}
-                    },
+        //                 } catch(e) {}
+        //             },
                     
-                    theme: 'default'
-                });
+        //             theme: 'default'
+        //         });
 
                 
 
-            });
+        //     });
         
-        });
+        // });
 
         var s2; 
 
