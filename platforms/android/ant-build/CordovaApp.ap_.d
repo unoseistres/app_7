@@ -98,6 +98,8 @@
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/save.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/sun.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/thickness.png \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/img/thickness.svg \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/img/thickness2.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/tree.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/welcomewritten2.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/wire_frames-01.png \
