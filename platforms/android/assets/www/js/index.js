@@ -34,7 +34,6 @@ var app = {
         var canvas,ctx;
         var coloring;
 
-        // $('INPUT.minicolors').minicolors(settings);
   $(document).ready( function() {
 
             $('.demo').each( function() {
@@ -47,6 +46,7 @@ var app = {
                 // by it. Also, data- attributes aren't supported at this time. Again,
                 // they're only used for the purposes of this demo.
                 //
+
                 $(this).minicolors({
                     control: $(this).attr('data-control') || 'hue',
                     defaultValue: $(this).attr('data-defaultValue') || '',
@@ -58,32 +58,26 @@ var app = {
                         var log;
                         try {
                             log = hex ? hex : 'transparent';
+                      
                             if( opacity ) log += ', ' + opacity;
-                            console.log(log);
+
+                            var c = log;
+                            coloring= c;
+                          
+                            console.log("HEX: " + '' + log);
+                            
                         } catch(e) {}
                     },
+                    
                     theme: 'default'
                 });
 
-            });
+                
 
+            });
+        
         });
 
-
-
-        
-        
-        
-        function updateColor(colorAmount) {
-          // var c = document.getElementById("color").value;
-          // coloring = c;
-          var c=$("#hidden-input").minicolors();
-          coloring = c;
-        }
-        
-
-      
-  
     var s; 
 
       $(function() {
@@ -117,6 +111,8 @@ var app = {
         }
         // Let's use black by setting RGB values to 0, and 255 alpha (completely opaque)
         r=0; g=0; b=0; a=255;
+
+
         // Select a fill style
         // ctx.strokeStyle = "rgba("+r+","+g+","+b+","+(a/255)+")";
         ctx.strokeStyle = coloring;
@@ -228,7 +224,8 @@ var app = {
     function myMarker(){
       ctx.globalCompositeOperation = "source-over";
       ctx.strokeStyle = c;
-      var c = document.getElementById("color").value;
+      // var c = document.getElementById("color").value;
+      $('.demo').css('backgroundColor', '#' + hex);
     }
    
     // Clear the canvas context using the canvas width and height

@@ -61,7 +61,6 @@ var app = {
                       
                             if( opacity ) log += ', ' + opacity;
 
-                           
                             var c = log;
                             coloring= c;
                           
