@@ -33,6 +33,8 @@ var app = {
 // Variables for referencing the canvas and 2dcanvas context
         var canvas,ctx;
         var coloring;
+        
+        
 
   $(document).ready( function() {
 
@@ -79,6 +81,187 @@ var app = {
             });
         
         });
+  var s2; 
+
+              $(function() {
+              $( "#slider2" ).slider({
+                  value:1,
+                    min: 1,
+                    max: 15,
+                    step: 1,
+                slide: function( event, ui ) {
+                var x2 = ui.value;
+                s2= x2;
+                console.log(s2);
+                      }
+                  });   
+              });
+
+              
+
+// Variables to keep track of the mouse position and left-button status 
+    var mouseX2,mouseY2,mouseDown2=0;
+    // Variables to keep track of the touch position
+    var touchX2,touchY2;
+    // Keep track of the old/last position when drawing a line
+    // We set it to -1 at the start to indicate that we don't have a good value for it yet
+    var lastX2,lastY2=-1;
+    
+    
+      
+    
+    // Draws a line between the specified position on the supplied canvas name
+    // Parameters are: A canvas context, the x position, the y position, the size of the dot
+    function drawLine2(ctx2,x,y,s2) {
+        // If lastX is not set, set lastX and lastY to the current position 
+        if (lastX2==-1) {
+            lastX2=x;
+            lastY2=y;
+        }
+        // Let's use black by setting RGB values to 0, and 255 alpha (completely opaque)
+        r=0; g=0; b=0; a=255;
+
+
+
+        // Select a fill style
+        // ctx.strokeStyle = "rgba("+r+","+g+","+b+","+(a/255)+")";
+        ctx2.strokeStyle = coloring2;
+        // Set the line "cap" style to round, so lines at different angles can join into each other
+        ctx2.lineCap = "round";
+        //ctx.lineJoin = "round";
+        // Draw a filled line
+        ctx2.beginPath();
+        // First, move to the old (previous) position
+        ctx2.moveTo(lastX2,lastY2);
+        // Now draw a line to the current touch/pointer position
+        ctx2.lineTo(x,y);
+        // Set the line thickness and draw the line
+        ctx2.lineWidth = s2;
+        ctx2.stroke();
+        ctx2.closePath();
+        // Update the last position to reference the current position
+        lastX2=x;
+        lastY2=y;
+    } 
+    
+        // Clear the canvas context using the canvas width and height
+    function clearCanvas2(canvas2,ctx2) {
+        ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
+        // var outlineImage = new Image();
+        // outlineImage.src = "img/crayon.png";
+          ctx2.drawImage(outlineImage,100,100,100,100);
+    }
+    // Keep track of the mouse button being pressed and draw a dot at current location
+    function sketchpad_mouseDown2() {
+        mouseDown2=1;
+        drawLine2(ctx2,mouseX2,mouseY2,s2);
+    }
+    // Keep track of the mouse button being released
+    function sketchpad_mouseUp2() {
+        mouseDown2=0;
+        // Reset lastX and lastY to -1 to indicate that they are now invalid, since we have lifted the "pen"
+        lastX2=-1;
+        lastY2=-1;
+    }
+    // Keep track of the mouse position and draw a dot if mouse button is currently pressed
+    function sketchpad_mouseMove2(e) { 
+        // Update the mouse co-ordinates when moved
+        getMousePos2(e);
+        // Draw a dot if the mouse button is currently being pressed
+        if (mouseDown2==1) {
+            drawLine2(ctx2,mouseX2,mouseY2,s2);
+        }
+    }
+    // Get the current mouse position relative to the top-left of the canvas
+    function getMousePos2(e) {
+        if (!e)
+            var e = event;
+        if (e.offsetX) {
+            mouseX2 = e.offsetX;
+            mouseY2 = e.offsetY;
+        }
+        else if (e.layerX) {
+            mouseX2 = e.layerX;
+            mouseY2 = e.layerY;
+        }
+     }
+     // Draw something when a touch start is detected
+    function sketchpad_touchStart2() {
+
+
+        // Update the touch co-ordinates
+        getTouchPos2();
+        drawLine2(ctx2,touchX2,touchY2,s2);
+        // Prevents an additional mousedown event being triggered
+        event.preventDefault();
+
+
+    }
+    function sketchpad_touchEnd2() {
+        // Reset lastX and lastY to -1 to indicate that they are now invalid, since we have lifted the "pen"
+        lastX2=-1;
+        lastY2=-1;
+    }
+    // Draw something and prevent the default scrolling when touch movement is detected
+    function sketchpad_touchMove2(e) { 
+        // Update the touch co-ordinates
+        getTouchPos2(e);
+        // During a touchmove event, unlike a mousemove event, we don't need to check if the touch is engaged, since there will always be contact with the screen by definition.
+        
+        drawLine2(ctx2,touchX2,touchY2,s2); 
+        // Prevent a scrolling action as a result of this touchmove triggering.
+        event.preventDefault();
+
+        var outlineImage = new Image();
+        outlineImage.src = "img/crayon.png";
+          ctx2.drawImage(outlineImage,100,100,100,100);
+          console.log("reDraw");
+    }
+    // Get the touch position relative to the top-left of the canvas
+    // When we get the raw values of pageX and pageY below, they take into account the scrolling on the page
+    // but not the position relative to our target div. We'll adjust them using "target.offsetLeft" and
+    // "target.offsetTop" to get the correct values in relation to the top left of the canvas.
+    function getTouchPos2(e) {
+        if (!e)
+            var e = event;
+           //  "onmousedown" = true;
+        if(e.touches) {
+            if (e.touches.length == 1) { // Only deal with one finger
+                var touch = e.touches[0]; // Get the information for finger #1
+                touchX2=touch.pageX-touch.target.offsetLeft;
+                touchY2=touch.pageY-touch.target.offsetTop;
+                console.log(e.touches);
+                
+            }
+        }
+    }
+
+    //erases with the same size stroke  
+    function myEraser2(){
+      ctx2.globalCompositeOperation = "destination-out";
+      ctx2.strokeStyle = "rgba(0,0,0,1)";
+
+      // drawLine(ctx,touchX,touchY,s);
+   }
+   
+    //goes back to the proportties of marker 
+    function myMarker2(){
+      ctx2.globalCompositeOperation = "source-over";
+      ctx2.strokeStyle = c2;
+      // var c = document.getElementById("color").value;
+      $('.demo').css('backgroundColor', '#' + hex);
+    }
+
+    // Clear the canvas context using the canvas width and height
+    function clearCanvas2(canvas2,ctx2) {
+        ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
+        var outlineImage = new Image();
+        outlineImage.src = "img/crayon.png";
+          ctx2.drawImage(outlineImage,100,100,100,100);
+    }
+
+    
+
 
     var s; 
 
@@ -175,6 +358,8 @@ var app = {
      }
     // Draw something when a touch start is detected
     function sketchpad_touchStart() {
+      
+        
         // Update the touch co-ordinates
         getTouchPos();
         drawLine(ctx,touchX,touchY,s);
@@ -236,9 +421,11 @@ var app = {
     }
     // Set-up the canvas and add our event handlers after the page has loaded
     
-    function init() {
-      
 
+    function init() {
+        
+        
+        // redraw();
         // Get the specific canvas element from the HTML document
         canvas = document.getElementById('can');
         // If the browser supports the canvas tag, get the 2d drawing context for this canvas
@@ -260,6 +447,9 @@ var app = {
         // If the browser supports the canvas tag, get the 2d drawing context for this canvas
         if (canvas2.getContext)
             ctx2 = canvas2.getContext('2d');
+            var outlineImage = new Image();
+            outlineImage.src = "img/crayon.png";
+            ctx2.drawImage(outlineImage,100,100,100,100);
         // Check that we have a valid context to draw on/with before adding event handlers
         if (ctx2) {
             // React to mouse events on the canvas, and mouseup on the entire document
@@ -533,6 +723,8 @@ var app = {
               console.log(rotation * TO_RADIANS);
 
               ctx.drawImage(img,position.left,position.top,width*scale,height*scale);
+
+
             // ctx.drawImage(img,position.left,position.top,-(width*scale)/2,-(height*scale)/2);
             // ctx.drawImage(img,-(img.width)/2),-(img.height)/2));
     
@@ -704,157 +896,4 @@ var app = {
         
         // });
 
-        var s2; 
-
-              $(function() {
-              $( "#slider2" ).slider({
-                  value:1,
-                    min: 1,
-                    max: 15,
-                    step: 1,
-                slide: function( event, ui ) {
-                var x2 = ui.value;
-                s2= x2;
-                console.log(s2);
-                      }
-                  });   
-              });
-// Variables to keep track of the mouse position and left-button status 
-    var mouseX2,mouseY2,mouseDown2=0;
-    // Variables to keep track of the touch position
-    var touchX2,touchY2;
-    // Keep track of the old/last position when drawing a line
-    // We set it to -1 at the start to indicate that we don't have a good value for it yet
-    var lastX2,lastY2=-1;
-    // Draws a line between the specified position on the supplied canvas name
-    // Parameters are: A canvas context, the x position, the y position, the size of the dot
-    function drawLine2(ctx2,x,y,s2) {
-        // If lastX is not set, set lastX and lastY to the current position 
-        if (lastX2==-1) {
-            lastX2=x;
-            lastY2=y;
-        }
-        // Let's use black by setting RGB values to 0, and 255 alpha (completely opaque)
-        r=0; g=0; b=0; a=255;
-
-
-        // Select a fill style
-        // ctx.strokeStyle = "rgba("+r+","+g+","+b+","+(a/255)+")";
-        ctx2.strokeStyle = coloring2;
-        // Set the line "cap" style to round, so lines at different angles can join into each other
-        ctx2.lineCap = "round";
-        //ctx.lineJoin = "round";
-        // Draw a filled line
-        ctx2.beginPath();
-        // First, move to the old (previous) position
-        ctx2.moveTo(lastX2,lastY2);
-        // Now draw a line to the current touch/pointer position
-        ctx2.lineTo(x,y);
-        // Set the line thickness and draw the line
-        ctx2.lineWidth = s2;
-        ctx2.stroke();
-        ctx2.closePath();
-        // Update the last position to reference the current position
-        lastX2=x;
-        lastY2=y;
-    } 
-    
-        // Clear the canvas context using the canvas width and height
-    function clearCanvas2(canvas2,ctx2) {
-        ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
-    }
-    // Keep track of the mouse button being pressed and draw a dot at current location
-    function sketchpad_mouseDown2() {
-        mouseDown2=1;
-        drawLine2(ctx2,mouseX2,mouseY2,s2);
-    }
-    // Keep track of the mouse button being released
-    function sketchpad_mouseUp2() {
-        mouseDown2=0;
-        // Reset lastX and lastY to -1 to indicate that they are now invalid, since we have lifted the "pen"
-        lastX2=-1;
-        lastY2=-1;
-    }
-    // Keep track of the mouse position and draw a dot if mouse button is currently pressed
-    function sketchpad_mouseMove2(e) { 
-        // Update the mouse co-ordinates when moved
-        getMousePos2(e);
-        // Draw a dot if the mouse button is currently being pressed
-        if (mouseDown2==1) {
-            drawLine2(ctx2,mouseX2,mouseY2,s2);
-        }
-    }
-    // Get the current mouse position relative to the top-left of the canvas
-    function getMousePos2(e) {
-        if (!e)
-            var e = event;
-        if (e.offsetX) {
-            mouseX2 = e.offsetX;
-            mouseY2 = e.offsetY;
-        }
-        else if (e.layerX) {
-            mouseX2 = e.layerX;
-            mouseY2 = e.layerY;
-        }
-     }
-     // Draw something when a touch start is detected
-    function sketchpad_touchStart2() {
-        // Update the touch co-ordinates
-        getTouchPos2();
-        drawLine2(ctx2,touchX2,touchY2,s2);
-        // Prevents an additional mousedown event being triggered
-        event.preventDefault();
-    }
-    function sketchpad_touchEnd2() {
-        // Reset lastX and lastY to -1 to indicate that they are now invalid, since we have lifted the "pen"
-        lastX2=-1;
-        lastY2=-1;
-    }
-    // Draw something and prevent the default scrolling when touch movement is detected
-    function sketchpad_touchMove2(e) { 
-        // Update the touch co-ordinates
-        getTouchPos2(e);
-        // During a touchmove event, unlike a mousemove event, we don't need to check if the touch is engaged, since there will always be contact with the screen by definition.
-        
-        drawLine2(ctx2,touchX2,touchY2,s2); 
-        // Prevent a scrolling action as a result of this touchmove triggering.
-        event.preventDefault();
-    }
-    // Get the touch position relative to the top-left of the canvas
-    // When we get the raw values of pageX and pageY below, they take into account the scrolling on the page
-    // but not the position relative to our target div. We'll adjust them using "target.offsetLeft" and
-    // "target.offsetTop" to get the correct values in relation to the top left of the canvas.
-    function getTouchPos2(e) {
-        if (!e)
-            var e = event;
-           //  "onmousedown" = true;
-        if(e.touches) {
-            if (e.touches.length == 1) { // Only deal with one finger
-                var touch = e.touches[0]; // Get the information for finger #1
-                touchX2=touch.pageX-touch.target.offsetLeft;
-                touchY2=touch.pageY-touch.target.offsetTop;
-                console.log(e.touches);
-                
-            }
-        }
-    }
-
-    //erases with the same size stroke  
-    function myEraser2(){
-      ctx2.globalCompositeOperation = "destination-out";
-      ctx2.strokeStyle = "rgba(0,0,0,1)";
-      // drawLine(ctx,touchX,touchY,s);
-   }
-   
-    //goes back to the proportties of marker 
-    function myMarker2(){
-      ctx2.globalCompositeOperation = "source-over";
-      ctx2.strokeStyle = c2;
-      // var c = document.getElementById("color").value;
-      $('.demo').css('backgroundColor', '#' + hex);
-    }
-
-    // Clear the canvas context using the canvas width and height
-    function clearCanvas2(canvas2,ctx2) {
-        ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
-    }
+      
