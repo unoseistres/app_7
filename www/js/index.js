@@ -98,12 +98,21 @@ var app = {
     // We set it to -1 at the start to indicate that we don't have a good value for it yet
     var lastX2,lastY2=-1;
     
-    
+    var xc=100;
+    var yc=20;
+    var sizey =400; 
+    var sizex =400;
+
+
+    var outlineImage = new Image();
+        outlineImage.src = "img/girlsoccer.png";
+        ctx2.drawImage(outlineImage,xc,yc,sizey,sizex);
       
     
         // Draws a line between the specified position on the supplied canvas name
         // Parameters are: A canvas context, the x position, the y position, the size of the dot
         function drawLine2(ctx2,x,y,s2) {
+
         // If lastX is not set, set lastX and lastY to the current position 
         if (lastX2==-1) {
             lastX2=x;
@@ -140,7 +149,7 @@ var app = {
         ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
         // var outlineImage = new Image();
         // outlineImage.src = "img/crayon.png";
-        ctx2.drawImage(outlineImage,100,100,100,100);
+         ctx2.drawImage(outlineImage,xc,yc,sizey,sizex);
         }
         // Keep track of the mouse button being pressed and draw a dot at current location
         function sketchpad_mouseDown2() {
@@ -205,7 +214,7 @@ var app = {
 
         var outlineImage = new Image();
         outlineImage.src = "img/girlsoccer.png";
-        ctx2.drawImage(outlineImage,100,100,100,100);
+         ctx2.drawImage(outlineImage,xc,yc,sizey,sizex);
         console.log("reDraw");
     }
     // Get the touch position relative to the top-left of the canvas
@@ -233,7 +242,7 @@ var app = {
         ctx2.strokeStyle = "rgba(0,0,0,1)";
         var outlineImage = new Image();
             outlineImage.src = "img/girlsoccer.png";
-            ctx2.drawImage(outlineImage,100,100,100,100);
+             ctx2.drawImage(outlineImage,xc,yc,sizey,sizex);
 
       // drawLine(ctx,touchX,touchY,s);
    }
@@ -251,11 +260,11 @@ var app = {
         ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
         var outlineImage = new Image();
         outlineImage.src = "img/girlsoccer.png";
-        ctx2.drawImage(outlineImage,100,100,100,100);
+         ctx2.drawImage(outlineImage,xc,yc,sizey,sizex);
     }
 
     
-
+/////////////////////////////////////////CANVAS 1////////////////////////////////////////////
 
     var s; 
 
@@ -415,7 +424,7 @@ var app = {
     }
     // Set-up the canvas and add our event handlers after the page has loaded
     var canvas2,ctx2;
-  var coloring2;
+    var coloring2;
       function init() {
 
         // Get the specific canvas element from the HTML document
@@ -441,12 +450,12 @@ var app = {
             ctx2 = canvas2.getContext('2d');
             var outlineImage = new Image();
             outlineImage.src = "img/girlsoccer.png";
-            ctx2.drawImage(outlineImage,100,100,100,100);
+            ctx2.drawImage(outlineImage,xc,yc,sizey,sizex);
         // Check that we have a valid context to draw on/with before adding event handlers
         if (ctx2) {
           var outlineImage = new Image();
             outlineImage.src = "img/girlsoccer.png";
-            ctx2.drawImage(outlineImage,100,100,100,100);
+            // ctx2.drawImage(outlineImage,100,100,100,100);
             // React to mouse events on the canvas, and mouseup on the entire document
             canvas2.addEventListener('mousedown', sketchpad_mouseDown2, false);
             canvas2.addEventListener('mousemove', sketchpad_mouseMove2, false);
