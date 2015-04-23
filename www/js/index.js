@@ -235,7 +235,10 @@ var app = {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
     // Set-up the canvas and add our event handlers after the page has loaded
+    
     function init() {
+      
+
         // Get the specific canvas element from the HTML document
         canvas = document.getElementById('can');
         // If the browser supports the canvas tag, get the 2d drawing context for this canvas
@@ -268,6 +271,7 @@ var app = {
             canvas2.addEventListener('touchend', sketchpad_touchEnd2, false);
             canvas2.addEventListener('touchmove', sketchpad_touchMove2, false);
         }
+        
     }
 
 ////////////////////////SECTION PAGES
@@ -541,6 +545,7 @@ var app = {
 
               $("#b1c" + counter).remove();
               $("#drop").hide();
+              $("#drop").empty();
      
             } 
   
@@ -853,8 +858,3 @@ var app = {
     function clearCanvas2(canvas2,ctx2) {
         ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
     }
-    
-
-
-
-

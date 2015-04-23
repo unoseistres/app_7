@@ -585,8 +585,58 @@ ul#smiley li {
 	width: auto;
 	/*z-index:1;*/
 }
+
 .minicolors-theme-default.minicolors {
 	width: 56px;
 	height: 25px;
   	margin: 12px 37px 0 57px;
 }
+
+
+
+.minicolors-panel { /* size of the whole container for the color picker */
+  width: 430px;
+  height: 380px;
+}
+
+.minicolors-slider, .minicolors-opacity-slider { /* change size of the hue container */
+  top: 1px;
+  left: 379px;
+  width: 50px;
+  height: 378px;
+  background-position: 0 0;
+  background-size: 5000% 100%;
+}
+
+.minicolors-picker { /* change size of the slider bar in the hue container */
+  width: 47px;
+}
+
+/*.minicolors-slider, .minicolors-opacity-slider {
+  left: 242px;
+  width: 30px;
+  height: 250px;
+  background-position: 0 0;
+  background-size: 5000% 100%;
+}
+*/
+.minicolors .minicolors-grid { /* change size of color grid */
+  width: 376px;
+  height: 378px;
+  background-position: -304px 0;
+  background-size: 583% 100%;
+}
+
+
+
+#can2{
+	background-image: url("img/crayon.png");
+
+}
+#p6{
+	margin-bottom: 80px;
+}
+/*#color-picker{
+	width: 200px;
+	height:300px;
+}*/
