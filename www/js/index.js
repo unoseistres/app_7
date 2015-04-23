@@ -39,16 +39,6 @@ var app = {
   $(document).ready( function() {
 
             $('.demo').each( function() {
-                //
-                // Dear reader, it's actually very easy to initialize MiniColors. For example:
-                //
-                //  $(selector).minicolors();
-                //
-                // The way I've done it below is just for the demo, so don't get confused
-                // by it. Also, data- attributes aren't supported at this time. Again,
-                // they're only used for the purposes of this demo.
-                //
-
                 $(this).minicolors({
                     control: $(this).attr('data-control') || 'hue',
                     defaultValue: $(this).attr('data-defaultValue') || '',
@@ -76,12 +66,13 @@ var app = {
                     theme: 'default'
                 });
 
-                
+
 
             });
-        
+
+              
         });
-  var s2; 
+        var s2; 
 
               $(function() {
               $( "#slider2" ).slider({
@@ -110,9 +101,9 @@ var app = {
     
       
     
-    // Draws a line between the specified position on the supplied canvas name
-    // Parameters are: A canvas context, the x position, the y position, the size of the dot
-    function drawLine2(ctx2,x,y,s2) {
+        // Draws a line between the specified position on the supplied canvas name
+        // Parameters are: A canvas context, the x position, the y position, the size of the dot
+        function drawLine2(ctx2,x,y,s2) {
         // If lastX is not set, set lastX and lastY to the current position 
         if (lastX2==-1) {
             lastX2=x;
@@ -145,35 +136,35 @@ var app = {
     } 
     
         // Clear the canvas context using the canvas width and height
-    function clearCanvas2(canvas2,ctx2) {
+        function clearCanvas2(canvas2,ctx2) {
         ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
         // var outlineImage = new Image();
         // outlineImage.src = "img/crayon.png";
-          ctx2.drawImage(outlineImage,100,100,100,100);
-    }
-    // Keep track of the mouse button being pressed and draw a dot at current location
-    function sketchpad_mouseDown2() {
+        ctx2.drawImage(outlineImage,100,100,100,100);
+        }
+        // Keep track of the mouse button being pressed and draw a dot at current location
+        function sketchpad_mouseDown2() {
         mouseDown2=1;
         drawLine2(ctx2,mouseX2,mouseY2,s2);
-    }
-    // Keep track of the mouse button being released
-    function sketchpad_mouseUp2() {
+        }
+        // Keep track of the mouse button being released
+        function sketchpad_mouseUp2() {
         mouseDown2=0;
         // Reset lastX and lastY to -1 to indicate that they are now invalid, since we have lifted the "pen"
         lastX2=-1;
         lastY2=-1;
-    }
-    // Keep track of the mouse position and draw a dot if mouse button is currently pressed
-    function sketchpad_mouseMove2(e) { 
+        }
+        // Keep track of the mouse position and draw a dot if mouse button is currently pressed
+        function sketchpad_mouseMove2(e) { 
         // Update the mouse co-ordinates when moved
         getMousePos2(e);
         // Draw a dot if the mouse button is currently being pressed
         if (mouseDown2==1) {
             drawLine2(ctx2,mouseX2,mouseY2,s2);
         }
-    }
-    // Get the current mouse position relative to the top-left of the canvas
-    function getMousePos2(e) {
+      }
+        // Get the current mouse position relative to the top-left of the canvas
+        function getMousePos2(e) {
         if (!e)
             var e = event;
         if (e.offsetX) {
@@ -185,25 +176,25 @@ var app = {
             mouseY2 = e.layerY;
         }
      }
-     // Draw something when a touch start is detected
-    function sketchpad_touchStart2() {
-
-
+      // Draw something when a touch start is detected
+        function sketchpad_touchStart2() {
         // Update the touch co-ordinates
         getTouchPos2();
         drawLine2(ctx2,touchX2,touchY2,s2);
+
+
         // Prevents an additional mousedown event being triggered
         event.preventDefault();
 
 
     }
-    function sketchpad_touchEnd2() {
+        function sketchpad_touchEnd2() {
         // Reset lastX and lastY to -1 to indicate that they are now invalid, since we have lifted the "pen"
         lastX2=-1;
         lastY2=-1;
     }
-    // Draw something and prevent the default scrolling when touch movement is detected
-    function sketchpad_touchMove2(e) { 
+        // Draw something and prevent the default scrolling when touch movement is detected
+        function sketchpad_touchMove2(e) { 
         // Update the touch co-ordinates
         getTouchPos2(e);
         // During a touchmove event, unlike a mousemove event, we don't need to check if the touch is engaged, since there will always be contact with the screen by definition.
@@ -213,15 +204,15 @@ var app = {
         event.preventDefault();
 
         var outlineImage = new Image();
-        outlineImage.src = "img/crayon.png";
-          ctx2.drawImage(outlineImage,100,100,100,100);
-          console.log("reDraw");
+        outlineImage.src = "img/girlsoccer.png";
+        ctx2.drawImage(outlineImage,100,100,100,100);
+        console.log("reDraw");
     }
     // Get the touch position relative to the top-left of the canvas
     // When we get the raw values of pageX and pageY below, they take into account the scrolling on the page
     // but not the position relative to our target div. We'll adjust them using "target.offsetLeft" and
     // "target.offsetTop" to get the correct values in relation to the top left of the canvas.
-    function getTouchPos2(e) {
+        function getTouchPos2(e) {
         if (!e)
             var e = event;
            //  "onmousedown" = true;
@@ -236,28 +227,31 @@ var app = {
         }
     }
 
-    //erases with the same size stroke  
-    function myEraser2(){
-      ctx2.globalCompositeOperation = "destination-out";
-      ctx2.strokeStyle = "rgba(0,0,0,1)";
+        //erases with the same size stroke  
+        function myEraser2(){
+        ctx2.globalCompositeOperation = "destination-out";
+        ctx2.strokeStyle = "rgba(0,0,0,1)";
+        var outlineImage = new Image();
+            outlineImage.src = "img/girlsoccer.png";
+            ctx2.drawImage(outlineImage,100,100,100,100);
 
       // drawLine(ctx,touchX,touchY,s);
    }
    
-    //goes back to the proportties of marker 
-    function myMarker2(){
-      ctx2.globalCompositeOperation = "source-over";
-      ctx2.strokeStyle = c2;
-      // var c = document.getElementById("color").value;
-      $('.demo').css('backgroundColor', '#' + hex);
+        //goes back to the proportties of marker 
+        function myMarker2(){
+        ctx2.globalCompositeOperation = "source-over";
+        ctx2.strokeStyle = c2;
+        // var c = document.getElementById("color").value;
+        $('.demo').css('backgroundColor', '#' + hex);
     }
 
-    // Clear the canvas context using the canvas width and height
-    function clearCanvas2(canvas2,ctx2) {
+       // Clear the canvas context using the canvas width and height
+        function clearCanvas2(canvas2,ctx2) {
         ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
         var outlineImage = new Image();
-        outlineImage.src = "img/crayon.png";
-          ctx2.drawImage(outlineImage,100,100,100,100);
+        outlineImage.src = "img/girlsoccer.png";
+        ctx2.drawImage(outlineImage,100,100,100,100);
     }
 
     
@@ -288,7 +282,7 @@ var app = {
     var lastX,lastY=-1;
     // Draws a line between the specified position on the supplied canvas name
     // Parameters are: A canvas context, the x position, the y position, the size of the dot
-    function drawLine(ctx,x,y,s) {
+        function drawLine(ctx,x,y,s) {
         // If lastX is not set, set lastX and lastY to the current position 
         if (lastX==-1) {
             lastX=x;
@@ -319,23 +313,23 @@ var app = {
         lastY=y;
     } 
         // Clear the canvas context using the canvas width and height
-    function clearCanvas(canvas,ctx) {
+        function clearCanvas(canvas,ctx) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
     // Keep track of the mouse button being pressed and draw a dot at current location
-    function sketchpad_mouseDown() {
+        function sketchpad_mouseDown() {
         mouseDown=1;
         drawLine(ctx,mouseX,mouseY,s);
     }
     // Keep track of the mouse button being released
-    function sketchpad_mouseUp() {
+        function sketchpad_mouseUp() {
         mouseDown=0;
         // Reset lastX and lastY to -1 to indicate that they are now invalid, since we have lifted the "pen"
         lastX=-1;
         lastY=-1;
     }
     // Keep track of the mouse position and draw a dot if mouse button is currently pressed
-    function sketchpad_mouseMove(e) { 
+        function sketchpad_mouseMove(e) { 
         // Update the mouse co-ordinates when moved
         getMousePos(e);
         // Draw a dot if the mouse button is currently being pressed
@@ -344,7 +338,7 @@ var app = {
         }
     }
     // Get the current mouse position relative to the top-left of the canvas
-    function getMousePos(e) {
+        function getMousePos(e) {
         if (!e)
             var e = event;
         if (e.offsetX) {
@@ -357,7 +351,7 @@ var app = {
         }
      }
     // Draw something when a touch start is detected
-    function sketchpad_touchStart() {
+        function sketchpad_touchStart() {
       
         
         // Update the touch co-ordinates
@@ -366,13 +360,13 @@ var app = {
         // Prevents an additional mousedown event being triggered
         event.preventDefault();
     }
-    function sketchpad_touchEnd() {
+        function sketchpad_touchEnd() {
         // Reset lastX and lastY to -1 to indicate that they are now invalid, since we have lifted the "pen"
         lastX=-1;
         lastY=-1;
     }
     // Draw something and prevent the default scrolling when touch movement is detected
-    function sketchpad_touchMove(e) { 
+        function sketchpad_touchMove(e) { 
         // Update the touch co-ordinates
         getTouchPos(e);
         // During a touchmove event, unlike a mousemove event, we don't need to check if the touch is engaged, since there will always be contact with the screen by definition.
@@ -385,7 +379,7 @@ var app = {
     // When we get the raw values of pageX and pageY below, they take into account the scrolling on the page
     // but not the position relative to our target div. We'll adjust them using "target.offsetLeft" and
     // "target.offsetTop" to get the correct values in relation to the top left of the canvas.
-    function getTouchPos(e) {
+        function getTouchPos(e) {
         if (!e)
             var e = event;
            //  "onmousedown" = true;
@@ -401,14 +395,14 @@ var app = {
     }
   
     //erases with the same size stroke  
-    function myEraser(){
+      function myEraser(){
       ctx.globalCompositeOperation = "destination-out";
       ctx.strokeStyle = "rgba(0,0,0,1)";
       // drawLine(ctx,touchX,touchY,s);
    }
    
     //goes back to the proportties of marker 
-    function myMarker(){
+      function myMarker(){
       ctx.globalCompositeOperation = "source-over";
       ctx.strokeStyle = c;
       // var c = document.getElementById("color").value;
@@ -416,16 +410,14 @@ var app = {
     }
    
     // Clear the canvas context using the canvas width and height
-    function clearCanvas(canvas,ctx) {
+      function clearCanvas(canvas,ctx) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
     // Set-up the canvas and add our event handlers after the page has loaded
-    
+    var canvas2,ctx2;
+  var coloring2;
+      function init() {
 
-    function init() {
-        
-        
-        // redraw();
         // Get the specific canvas element from the HTML document
         canvas = document.getElementById('can');
         // If the browser supports the canvas tag, get the 2d drawing context for this canvas
@@ -448,10 +440,13 @@ var app = {
         if (canvas2.getContext)
             ctx2 = canvas2.getContext('2d');
             var outlineImage = new Image();
-            outlineImage.src = "img/crayon.png";
+            outlineImage.src = "img/girlsoccer.png";
             ctx2.drawImage(outlineImage,100,100,100,100);
         // Check that we have a valid context to draw on/with before adding event handlers
         if (ctx2) {
+          var outlineImage = new Image();
+            outlineImage.src = "img/girlsoccer.png";
+            ctx2.drawImage(outlineImage,100,100,100,100);
             // React to mouse events on the canvas, and mouseup on the entire document
             canvas2.addEventListener('mousedown', sketchpad_mouseDown2, false);
             canvas2.addEventListener('mousemove', sketchpad_mouseMove2, false);
@@ -475,20 +470,27 @@ var app = {
         });
 
 
-      $(document).on("pagecreate","#section2",function swipe(){
-        $("#section2").on("swiperight",function(){
+      $(document).on("pagecreate","#section2",function swipe(e1){
+        $("#section2").on("swiperight",function(e2){
             console.log("section2 right");
 
 
         if(document.getElementById('drop').style.display==="block") {
         // swipe.preventDefault();
-        swipe.stopPropagation();
-        console.log("remove");
+                console.log("1");
+       // swipe.stopPropagation();
+                console.log("2");
+        } else {
+          $.mobile.changePage("#section1",{transition:"slide", reverse:true        });
+
+
         }
 
-        $.mobile.changePage("#section1",{transition:"slide", reverse:true
+        
+
+
+
       
-        });
     
 
         }); 
@@ -502,15 +504,15 @@ var app = {
 
 
           if(document.getElementById('drop').style.display==="block") {
-            swipe2.stopPropagation();
+            //swipe2.stopPropagation();
             // swipe2.preventDefault();
             console.log("remove");
-          }
+          } else {
 
           $.mobile.changePage("#section3",{transition:"slide",
       
         });
-    
+    }
 
         }); 
 
@@ -536,16 +538,31 @@ var app = {
         });  
         });
 
-      $(document).on("pagecreate","#section4",function(){
-        $("#section4").on("swiperight",function(){
-        $.mobile.changePage("#section3",{transition:"slide", reverse:true
+      $(document).on("pagecreate","#section4",function swipe3(){
+        $("#section4").on("swiperight",function (){
+
+
+        if($(".minicolors-panel.minicolors-slider-hue").css("display", "block")) {
         
-        });
-        });  
+        console.log("color drag"); 
+        }
+        else 
+        {
+
+        $.mobile.changePage("#section3",{transition:"slide", reverse:true
+              });
+        }
+
+        }); 
+
         });
 
-      $(document).on("pagecreate","#section4",function(){
+
+
+      $(document).on("pagecreate","#section4",function swipe4(){
         $("#section4").on("swipeleft",function(){
+
+
         $.mobile.changePage("#section5",{transition:"slide", 
       
         });
@@ -857,43 +874,4 @@ var app = {
 ///////////////////////////////////////////////////////////////////////////////////////SECTION 4
       // Variables for referencing the canvas and 2dcanvas context
   // 
-   var canvas2,ctx2;
-        var coloring2;
-
-        // $(document).ready( function() {
-
-        //     $('.demo').each( function() {
-               
-        //         $(this).minicolors({
-        //             control: $(this).attr('data-control') || 'hue',
-        //             defaultValue: $(this).attr('data-defaultValue') || '',
-        //             inline: $(this).attr('data-inline') === 'true',
-        //             letterCase: $(this).attr('data-letterCase') || 'lowercase',
-        //             opacity: $(this).attr('data-opacity'),
-        //             position: $(this).attr('data-position') || 'bottom right',
-        //             change: function(hex, opacity) {
-        //                 var log;
-        //                 try {
-        //                     log = hex ? hex : 'transparent';
-                      
-        //                     if( opacity ) log += ', ' + opacity;
-
-        //                     var c2 = log;
-        //                     coloring2= c2;
-        //                     // coloring2= c;
-                          
-        //                     console.log("HEX: " + '' + log);
-                            
-        //                 } catch(e) {}
-        //             },
-                    
-        //             theme: 'default'
-        //         });
-
-                
-
-        //     });
-        
-        // });
-
-      
+   

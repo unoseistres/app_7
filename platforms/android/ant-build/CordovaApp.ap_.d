@@ -40,6 +40,7 @@
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/colorPicker.min.css \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/examples.css \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/images \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/css/img \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/index.css \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/jquery-ui.css \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/jquery-ui.min.css \
@@ -64,6 +65,7 @@
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/images/ui-bg_glass_65_ffffff_1x400.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/images/ui-bg_highlight-soft_100_eeeeee_1x100.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/css/images/ui-icons_222222_256x240.png \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/css/img/crayon.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/clear.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/cloud.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/comote.png \
@@ -75,6 +77,8 @@
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/drawers.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/eraser.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/flower.png \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/img/girl.jpg \
+/Users/dickweed/documents/app_7/platforms/android/assets/www/img/girlsoccer.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/happyface1.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/happyface2.png \
 /Users/dickweed/documents/app_7/platforms/android/assets/www/img/happyface3.png \
