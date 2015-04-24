@@ -488,11 +488,16 @@ var app = {
         
                 console.log("1");
        
-          } else {
-          $.mobile.changePage("#section1",{transition:"slide", reverse:true});
+          } else if ($("div.minicolors-slider-hue").is(":visible")){
+               
+                console.log("block displayed");
+          
+          }else{
+            $.mobile.changePage("#section1",{transition:"slide", reverse:true});
+                console.log("2");
 
-
-            }
+            
+          }
 
         }); 
 
@@ -507,12 +512,16 @@ var app = {
           if(document.getElementById('drop').style.display==="block") {
             //swipe2.stopPropagation();
             // swipe2.preventDefault();
-            console.log("remove");
-          } else {
+            console.log("1");
+          } else if ($("div.minicolors-slider-hue").is(":visible")){
+               
+                console.log("block displayed");
+          
+          }else{
+            $.mobile.changePage("#section3",{transition:"slide"});
+                console.log("2");
 
-          $.mobile.changePage("#section3",{transition:"slide",
-      
-              });
+            
           }
 
         }); 
