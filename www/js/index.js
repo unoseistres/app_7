@@ -106,7 +106,7 @@ var app = {
 
     var outlineImage = new Image();
         outlineImage.src = "img/girlsoccer.png";
-        ctx2.drawImage(outlineImage,xc,yc,sizey,sizex);
+        // ctx2.drawImage(outlineImage,xc,yc,sizey,sizex);
       
     
         // Draws a line between the specified position on the supplied canvas name
@@ -485,22 +485,14 @@ var app = {
 
 
         if(document.getElementById('drop').style.display==="block") {
-        // swipe.preventDefault();
-                console.log("1");
-       // swipe.stopPropagation();
-                console.log("2");
-        } else {
-          $.mobile.changePage("#section1",{transition:"slide", reverse:true        });
-
-
-        }
-
         
+                console.log("1");
+       
+          } else {
+          $.mobile.changePage("#section1",{transition:"slide", reverse:true});
 
 
-
-      
-    
+            }
 
         }); 
 
@@ -520,8 +512,8 @@ var app = {
 
           $.mobile.changePage("#section3",{transition:"slide",
       
-        });
-    }
+              });
+          }
 
         }); 
 
@@ -546,37 +538,56 @@ var app = {
         });
         });  
         });
+        
 
       $(document).on("pagecreate","#section4",function swipe3(){
         $("#section4").on("swiperight",function (){
+          if ($("div.minicolors-slider-hue").is(":visible")){
+               
+              console.log("block displayed");
+          }else{
+            $.mobile.changePage("#section3",{transition:"slide", reverse:true});
+                console.log("2");
 
-
-        if($(".minicolors-panel.minicolors-slider-hue").css("display", "block")) {
-        
-        console.log("color drag"); 
-        }
-        else 
-        {
-
-        $.mobile.changePage("#section3",{transition:"slide", reverse:true
-              });
-        }
-
-        }); 
+            
+          }
+          
 
         });
+
+        });
+
+      
+
+      // $(document).on("pagecreate","#section4",function swipe3(){
+      //   $("#section4").on("swiperight",function (){
+      //     if ($("div.minicolors-slider-hue").css("display", "block")){
+               
+      //         console.log("block displayed");
+      //     }else{
+      //       $.mobile.changePage("#section3",{transition:"slide", reverse:true});
+      //           console.log("2");
+
+            
+      //     }
+          
+
+      //   });
+
+      //   });
 
 
 
       $(document).on("pagecreate","#section4",function swipe4(){
         $("#section4").on("swipeleft",function(){
 
+        $.mobile.changePage("#section5",{transition:"slide"});
+        }); 
 
-        $.mobile.changePage("#section5",{transition:"slide", 
-      
         });
-        });  
-        });
+       
+
+        
 
       $(document).on("pagecreate","#section5",function(){
         $("#section5").on("swiperight",function(){
